@@ -1,5 +1,5 @@
 import React from "react";
-import "./CSS/Hero.css";
+import "./CSS/hero.css";
 import { Link } from "react-router-dom";
 import profileImg from "../assets/logo.png"; // Add your image inside "assets" folder
 
