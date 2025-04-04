@@ -11,16 +11,14 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import {
-  SiMongodb,
   SiMysql,
   SiBootstrap,
-  SiExpress,
   SiIntellijidea,
   SiEclipseide,
   SiC,
   SiCplusplus,
 } from "react-icons/si";
-import "./css/skills.css";
+import "./CSS/skills.css";
 
 const Skills = () => {
   const skillCategories = [
