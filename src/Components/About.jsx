@@ -1,5 +1,5 @@
 import React from "react";
-import "./CSS/About.css";
+import "./CSS/about.css";
 import myPhoto from "../assets/myphoto.jpg"; // Replace with your actual image
 import { Link } from "react-router-dom"; // For navigation
 

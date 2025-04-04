@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./CSS/Navbar.css";
+import "./CSS/navbar.css";
 import Swal from "sweetalert2";
 import logo from "../assets/logo.png"; // Ensure your logo is inside the "assets" folder
 
