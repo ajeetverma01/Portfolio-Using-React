@@ -6,7 +6,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 ## 🔗 Live Demo
 
-[🌐 View Portfolio](https://ajeetverma.netlify.app/)
+[🌐 View Portfolio] (https://ajeetverma.netlify.app/)
 
 ---
 
