@@ -7,6 +7,7 @@ import Skills from "./Components/Skills";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import ScrollToTop from "./Components/scrollToTop"; 
+import Certificate from "./Components/Certificate";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/certificate" element={<Certificate />} />
       </Routes>
       <Footer />
     </Router>
