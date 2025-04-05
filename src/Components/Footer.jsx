@@ -18,7 +18,8 @@ const Footer = () => {
           <Link to={"/about"} className="nav-link">About</Link>
           <Link to={"/projects"} className="nav-link">Projects</Link>
           <Link to={"/skills"} className="nav-link">Skills</Link>
-          <Link to={"/Contact"} className="nav-link">Contact</Link>
+          <Link to={"/certificate"} className="nav-link">Certificates</Link>
+          <Link to={"/contact"} className="nav-link">Contact</Link>
         </div>
 
         {/* Right Section: Social Media Links */}
