@@ -54,6 +54,7 @@ const Navbar = () => {
             <Link to="/" className={`nav-link ${location.pathname === "/" ? "active-link" : ""}`} onClick={() => setMenuOpen(true)}>Home</Link>
             <Link to="/about" className={`nav-link ${location.pathname === "/about" ? "active-link" : ""}`} onClick={() => setMenuOpen(true)}>About</Link>
             <Link to="/projects" className={`nav-link ${location.pathname === "/projects" ? "active-link" : ""}`} onClick={() => setMenuOpen(true)}>Projects</Link>
+            <Link to="/certificate" className={`nav-link ${location.pathname === "/certificate" ? "active-link" : ""}`} onClick={() => setMenuOpen(true)}>Certificate</Link>
             <Link to="/skills" className={`nav-link ${location.pathname === "/skills" ? "active-link" : ""}`} onClick={() => setMenuOpen(true)}>Skills</Link>
             <Link to="/contact" className={`nav-link ${location.pathname === "/contact" ? "active-link" : ""}`} onClick={() => setMenuOpen(true)}>Contact</Link>
             <a href="#" className="nav-link resume-link" onClick={handleResumeClick}>
