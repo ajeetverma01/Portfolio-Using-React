@@ -2,29 +2,48 @@ import React from 'react';
 
 const certificates = [
   {
-    title: 'Full Stack Web Development',
-    issuer: 'Code Academy',
-    date: 'April 2025',
-    link: 'https://example.com/certificate1',
-  },
-  {
-    title: 'Java Programming Masterclass',
-    issuer: 'Udemy',
+    title: 'Software Engineer Intern',
+    issuer: 'Hackerrank',
     date: 'March 2025',
-    link: 'https://example.com/certificate2',
+    link: 'https://www.hackerrank.com/certificates/3a4f04e5651e',
   },
   {
-    title: 'React JS Crash Course',
-    issuer: 'freeCodeCamp',
+    title: 'Java (Basic)',
+    issuer: 'Hackerrank',
     date: 'February 2025',
-    link: 'https://example.com/certificate3',
+    link: 'https://www.hackerrank.com/certificates/3918e972caa2',
   },
   {
-    title: 'JavaScript Basics',
-    issuer: 'Coursera',
-    date: 'January 2025',
-    link: 'https://example.com/certificate4',
+    title: 'SQL (Basic)',
+    issuer: 'Hackerrank',
+    date: 'February 2025',
+    link: 'https://www.hackerrank.com/certificates/5a652d26bcb4',
   },
+  {
+    title: 'CSS (Basic)',
+    issuer: 'Hackerrank',
+    date: 'February 2025',
+    link: 'https://www.hackerrank.com/certificates/3093804de163',
+  },
+  {
+    title: 'JavaScript (Basic)',
+    issuer: 'Hackerrank',
+    date: 'March 2025',
+    link: 'https://www.hackerrank.com/certificates/dce02f88cb6d',
+  },
+  {
+    title: 'JavaScript (Basic)',
+    issuer: 'Hackerrank',
+    date: 'March 2025',
+    link: 'https://www.hackerrank.com/certificates/36823547b246',
+  },
+  {
+    title: 'JavaScript (Intermediate)',
+    issuer: 'Hackerrank',
+    date: 'March 2025',
+    link: 'https://www.hackerrank.com/certificates/4b6f9aa135a5',
+  },
+  
 ];
 
 const Certificate = () => {
