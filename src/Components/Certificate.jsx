@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import testImg1 from '../assets/cer1.png';
-import testImg2 from '../assets/java-basic.png';
-import testImg3 from '../assets/sql-basic.png';
-import testImg4 from '../assets/css-basic.png';
-import testImg5 from '../assets/js1.png';
-import testImg6 from '../assets/js2.png';
-import testImg7 from '../assets/py.png';
-import testImg8 from '../assets/web-dev.png';
-import testImg9 from '../assets/data-sc.png';
+import testImg1 from '../assets/cer1.PNG';
+import testImg2 from '../assets/java-basic.PNG';
+import testImg3 from '../assets/sql-basic.PNG';
+import testImg4 from '../assets/css-basic.PNG';
+import testImg5 from '../assets/js1.PNG';
+import testImg6 from '../assets/js2.PNG';
+import testImg7 from '../assets/py.PNG';
+import testImg8 from '../assets/web-dev.PNG';
+import testImg9 from '../assets/data-sc.PNG';
 import cer1 from '../assets/Certificates/edureka-web-dev.pdf';
 import cer2 from '../assets/Certificates/edureka-data-sc.pdf';
 
