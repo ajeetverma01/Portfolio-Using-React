@@ -1,5 +1,5 @@
 import React from "react";
-  import "./CSS/contact.css"; // Import Custom CSS
+import "./CSS/contact.css";
 
 const Contact = () => {
   return (
@@ -11,19 +11,25 @@ const Contact = () => {
             <h5 className="fw-bold">Get in Touch</h5>
             <p className="text-muted">Feel free to reach out via email or connect on social media.</p>
             
-            <div className="mt-3 contact-info">
-              <p><i className="bi bi-envelope-fill"></i> Email: <a href="mailto:av4010402@gmail.com.com" className="contact-link">av401402@gmail.com</a></p>
-              <p><i className="bi bi-phone-fill"></i> Phone: <br/> +91 6389695460</p>
+            <div className="mt-4 contact-info">
+              <p>
+                <i className="bi bi-envelope-fill me-2"></i>
+                <strong>Email:</strong>{" "}
+                <a href="mailto:av401402@gmail.com" className="contact-link">av401402@gmail.com</a>
+              </p>
+              <p>
+                <i className="bi bi-phone-fill me-2"></i>
+                <strong>Phone:</strong> +91 6389695460
+              </p>
             </div>
 
-            <div className="d-flex justify-content-center gap-3 mt-3 social-icons">
-            <a href="https://www.linkedin.com/in/ajeetverma01" target="_blank" rel="noopener noreferrer" className="btn btn-primary rounded-circle p-3">
+            <div className="d-flex justify-content-center gap-3 mt-4 social-icons">
+              <a href="https://www.linkedin.com/in/ajeetverma01" target="_blank" rel="noopener noreferrer" className="btn btn-primary rounded-circle p-3">
                 <i className="bi bi-linkedin"></i>
               </a>
               <a href="https://github.com/ajeetverma01" target="_blank" rel="noopener noreferrer" className="btn btn-dark rounded-circle p-3">
                 <i className="bi bi-github"></i>
               </a>
-              
               <a href="https://instagram.com/ajeet_me" target="_blank" rel="noopener noreferrer" className="btn btn-info text-white rounded-circle p-3">
                 <i className="bi bi-instagram"></i>
               </a>
