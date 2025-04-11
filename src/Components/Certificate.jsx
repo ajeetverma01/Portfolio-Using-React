@@ -23,7 +23,7 @@ const certificates = [
     title: 'Web Development Internship',
     issuer: 'Edureka',
     date: 'November 2024',
-    link: cer1,
+    link: '/certificates/edureka-web-dev.pdf',
     image: testImg8,
   },
   {
@@ -44,7 +44,7 @@ const certificates = [
     title: 'Data Science & M.L.',
     issuer: 'Edureka',
     date: 'May 2024',
-    link: cer2,
+    link: '/certificates/edureka-data-sc.pdf',
     image: testImg9,
   },
   {
