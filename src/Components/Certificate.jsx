@@ -1,4 +1,5 @@
 import React from 'react';
+import testImg from '../assets/swIntern.JPG'; // Replace with actual certificate preview image
 
 const certificates = [
   {
@@ -43,28 +44,21 @@ const certificates = [
     date: 'March 2025',
     link: 'https://www.hackerrank.com/certificates/4b6f9aa135a5',
   },
-  
 ];
 
 const Certificate = () => {
   return (
-    <div
-      className="py-5"
-      style={{
-        minHeight: '100vh',
-      }}
-    >
+    <div className="py-5" style={{ minHeight: '100vh' }}>
       <div className="container">
         <h2 className="text-center fw-bold mb-5">My Certificates</h2>
         <div className="row g-4">
           {certificates.map((cert, index) => (
             <div key={index} className="col-md-6 col-lg-4">
               <div
-                className="card h-100 border-0 rounded-4 p-3 shadow-sm"
+                className="card h-100 border-0 rounded-4 shadow-sm"
                 style={{
                   background: 'white',
                   transition: 'all 0.4s ease',
-                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.06)',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-8px)';
@@ -75,6 +69,12 @@ const Certificate = () => {
                   e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.06)';
                 }}
               >
+                <img
+                  src={testImg}
+                  alt={`${cert.title} preview`}
+                  className="card-img-top rounded-4"
+                  style={{ height: '200px', objectFit: 'cover' }}
+                />
                 <div className="card-body d-flex flex-column justify-content-between">
                   <div>
                     <h5 className="card-title fw-semibold text-dark">{cert.title}</h5>
@@ -87,7 +87,7 @@ const Certificate = () => {
                     href={cert.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn btn-sm mt-3 px-3 py-1 text-white fw-medium"
+                    className="btn btn-sm mt-3 px-3 py-2 text-white fw-medium"
                     style={{
                       background: 'linear-gradient(135deg, #38b000, #007f5f)',
                       border: 'none',
