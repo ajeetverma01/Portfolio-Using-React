@@ -10,18 +10,28 @@
 }
 
 .resume-link {
-  font-weight: bold;
-  /* color: #ffc107 !important; */
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
   cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+   
   transition: color 0.3s ease;
 }
-
-.resume-link:hover {
-  /* color: #e0a800 !important; */
-  text-decoration: underline;
+.resume-link:hover,
+.resume-link:focus {
+  color: #ffcc00; /* Or your active hover color */
+  text-decoration: none;
 }
 
-
+/* Optional: if your nav links have an active class */
+.active-link {
+  color: #ffcc00;
+}
 .navbar.scrolled {
   box-shadow: 0 4px 6px rgb(94, 104, 50);
   background-color: var(--bs-dark) !important;
