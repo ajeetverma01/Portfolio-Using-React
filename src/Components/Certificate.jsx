@@ -1,5 +1,5 @@
-import React from 'react';
-import testImg from '../assets/swIntern.JPG'; // Replace with actual certificate preview image
+import React, { useState, useEffect } from 'react';
+import testImg from '../assets/swIntern.JPG'; // Replace with your image path
 
 const certificates = [
   {
@@ -47,18 +47,61 @@ const certificates = [
 ];
 
 const Certificate = () => {
+  const [showAll, setShowAll] = useState(false);
+  const [animateCards, setAnimateCards] = useState(false);
+  const [itemsToShow, setItemsToShow] = useState(6);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        setItemsToShow(showAll ? certificates.length : 3);
+      } else {
+        setItemsToShow(showAll ? certificates.length : 6);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [showAll]);
+
+  useEffect(() => {
+    setAnimateCards(false);
+    const timer = setTimeout(() => setAnimateCards(true), 10);
+    return () => clearTimeout(timer);
+  }, [showAll]);
+
+  const handleToggle = () => setShowAll(prev => !prev);
+
   return (
     <div className="py-5" style={{ minHeight: '100vh' }}>
+      <style>{`
+        .certificate-card {
+          opacity: 0;
+          transform: scale(0.96);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .certificate-card.animate {
+          opacity: 1;
+          transform: scale(1);
+        }
+      `}</style>
+
       <div className="container">
         <h2 className="text-center fw-bold mb-5">My Certificates</h2>
         <div className="row g-4">
-          {certificates.map((cert, index) => (
-            <div key={index} className="col-md-6 col-lg-4">
+          {certificates.slice(0, itemsToShow).map((cert, index) => (
+            <div
+              key={index}
+              className={`col-md-6 col-lg-4 certificate-card ${animateCards ? 'animate' : ''}`}
+            >
               <div
                 className="card h-100 border-0 rounded-4 shadow-sm"
                 style={{
                   background: 'white',
                   transition: 'all 0.4s ease',
+                  minHeight: '420px',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-8px)';
@@ -73,9 +116,9 @@ const Certificate = () => {
                   src={testImg}
                   alt={`${cert.title} preview`}
                   className="card-img-top rounded-4"
-                  style={{ height: '200px', objectFit: 'cover' }}
+                  style={{ height: '240px', objectFit: 'cover' }}
                 />
-                <div className="card-body d-flex flex-column justify-content-between">
+                <div className="card-body d-flex flex-column justify-content-between px-3 py-3">
                   <div>
                     <h5 className="card-title fw-semibold text-dark">{cert.title}</h5>
                     <p className="card-text text-secondary mb-1">
@@ -109,6 +152,31 @@ const Certificate = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-4">
+          <button
+            onClick={handleToggle}
+            className="btn btn-success px-4 py-2 fw-medium"
+            style={{
+              borderRadius: '12px',
+              background: 'linear-gradient(135deg, #38b000, #007f5f)',
+              boxShadow: '0 4px 12px rgba(56, 176, 0, 0.3)',
+              transition: 'all 0.3s ease',
+              color: 'white',
+              border: 'none',
+            }}
+            onMouseOver={(e) => {
+              e.target.style.boxShadow = '0 6px 18px rgba(56, 176, 0, 0.5)';
+              e.target.style.transform = 'scale(1.03)';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.boxShadow = '0 4px 12px rgba(56, 176, 0, 0.3)';
+              e.target.style.transform = 'scale(1)';
+            }}
+          >
+            {showAll ? 'Show Less' : 'Show All'}
+          </button>
         </div>
       </div>
     </div>
