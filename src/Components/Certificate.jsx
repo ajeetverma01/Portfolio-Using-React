@@ -1,4 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import testImg1 from '../assets/cer1.png';
+import testImg2 from '../assets/java-basic.png';
+import testImg3 from '../assets/sql-basic.png';
+import testImg4 from '../assets/css-basic.png';
+import testImg5 from '../assets/js1.png';
+import testImg6 from '../assets/js2.png';
+import testImg7 from '../assets/py.png';
+import testImg8 from '../assets/web-dev.png';
+import testImg9 from '../assets/data-sc.png';
+import cer1 from '../assets/Certificates/edureka-web-dev.pdf';
+import cer2 from '../assets/Certificates/edureka-data-sc.pdf';
 
 const certificates = [
   {
@@ -6,42 +17,63 @@ const certificates = [
     issuer: 'Hackerrank',
     date: 'March 2025',
     link: 'https://www.hackerrank.com/certificates/3a4f04e5651e',
+    image: testImg1,
+  },
+  {
+    title: 'Web Development Internship',
+    issuer: 'Edureka',
+    date: 'November 2024',
+    link: cer1,
+    image: testImg8,
   },
   {
     title: 'Java (Basic)',
     issuer: 'Hackerrank',
     date: 'February 2025',
     link: 'https://www.hackerrank.com/certificates/3918e972caa2',
+    image: testImg2,
   },
   {
     title: 'SQL (Basic)',
     issuer: 'Hackerrank',
     date: 'February 2025',
     link: 'https://www.hackerrank.com/certificates/5a652d26bcb4',
+    image: testImg3,
+  },
+  {
+    title: 'Data Science & M.L.',
+    issuer: 'Edureka',
+    date: 'May 2024',
+    link: cer2,
+    image: testImg9,
   },
   {
     title: 'CSS (Basic)',
     issuer: 'Hackerrank',
     date: 'February 2025',
     link: 'https://www.hackerrank.com/certificates/3093804de163',
+    image: testImg4,
   },
   {
     title: 'JavaScript (Basic)',
     issuer: 'Hackerrank',
     date: 'March 2025',
     link: 'https://www.hackerrank.com/certificates/dce02f88cb6d',
-  },
-  {
-    title: 'JavaScript (Basic)',
-    issuer: 'Hackerrank',
-    date: 'March 2025',
-    link: 'https://www.hackerrank.com/certificates/36823547b246',
+    image: testImg5,
   },
   {
     title: 'JavaScript (Intermediate)',
     issuer: 'Hackerrank',
     date: 'March 2025',
+    link: 'https://www.hackerrank.com/certificates/36823547b246',
+    image: testImg6,
+  },
+  {
+    title: 'Python (Basic)',
+    issuer: 'Hackerrank',
+    date: 'March 2025',
     link: 'https://www.hackerrank.com/certificates/4b6f9aa135a5',
+    image: testImg7,
   },
 ];
 
@@ -100,7 +132,7 @@ const Certificate = () => {
                 style={{
                   background: 'white',
                   transition: 'all 0.4s ease',
-                  padding: '20px',
+                  minHeight: '420px',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-8px)';
@@ -111,6 +143,12 @@ const Certificate = () => {
                   e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.06)';
                 }}
               >
+                <img
+                  src={cert.image}
+                  alt={`${cert.title} preview`}
+                  className="card-img-top rounded-4"
+                  style={{ height: '240px', objectFit: 'cover' }}
+                />
                 <div className="card-body d-flex flex-column justify-content-between px-3 py-3">
                   <div>
                     <h5 className="card-title fw-semibold text-dark">{cert.title}</h5>
@@ -148,13 +186,7 @@ const Certificate = () => {
         </div>
 
         <div
-          className="mt-4"
-          style={{
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
+          className="mt-4 d-flex justify-content-center align-items-center w-100"
         >
           <button
             onClick={handleToggle}
