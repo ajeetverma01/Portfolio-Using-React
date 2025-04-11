@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import testImg from '../assets/swIntern.JPG'; // Replace with your image path
 
 const certificates = [
   {
@@ -101,7 +100,7 @@ const Certificate = () => {
                 style={{
                   background: 'white',
                   transition: 'all 0.4s ease',
-                  minHeight: '420px',
+                  padding: '20px',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-8px)';
@@ -112,12 +111,6 @@ const Certificate = () => {
                   e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.06)';
                 }}
               >
-                <img
-                  src={testImg}
-                  alt={`${cert.title} preview`}
-                  className="card-img-top rounded-4"
-                  style={{ height: '240px', objectFit: 'cover' }}
-                />
                 <div className="card-body d-flex flex-column justify-content-between px-3 py-3">
                   <div>
                     <h5 className="card-title fw-semibold text-dark">{cert.title}</h5>
@@ -154,17 +147,29 @@ const Certificate = () => {
           ))}
         </div>
 
-        <div className="text-center mt-4">
+        <div
+          className="mt-4"
+          style={{
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
           <button
             onClick={handleToggle}
-            className="btn btn-success px-4 py-2 fw-medium"
             style={{
+              padding: '10px 24px',
+              fontSize: '16px',
+              fontWeight: '500',
               borderRadius: '12px',
-              background: 'linear-gradient(135deg, #38b000, #007f5f)',
+              background: 'linear-gradient(135deg,rgb(38, 0, 176), #007f5f)',
               boxShadow: '0 4px 12px rgba(56, 176, 0, 0.3)',
               transition: 'all 0.3s ease',
               color: 'white',
               border: 'none',
+              outline: 'none',
+              cursor: 'pointer',
             }}
             onMouseOver={(e) => {
               e.target.style.boxShadow = '0 6px 18px rgba(56, 176, 0, 0.5)';
