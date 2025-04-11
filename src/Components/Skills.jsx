@@ -9,6 +9,7 @@ import {
   FaJava,
   FaPython,
   FaGithub,
+  
 } from "react-icons/fa";
 import {
   SiMysql,
@@ -17,6 +18,7 @@ import {
   SiEclipseide,
   SiC,
   SiCplusplus,
+  SiSqlite,
 } from "react-icons/si";
 import "./CSS/skills.css";
 
@@ -34,8 +36,8 @@ const Skills = () => {
     {
       title: "Web Development",
       skills: [
-        { name: "HTML", icon: <FaHtml5 />, color: "#e34c26" },
-        { name: "CSS", icon: <FaCss3Alt />, color: "#264de4" },
+        { name: "HTML5", icon: <FaHtml5 />, color: "#e34c26" },
+        { name: "CSS3", icon: <FaCss3Alt />, color: "#264de4" },
         { name: "JavaScript", icon: <FaJs />, color: "#f7df1e", textColor: "#222" },
         { name: "PHP", icon: <FaPhp />, color: "#6c63ff" },
       ],
@@ -56,7 +58,10 @@ const Skills = () => {
     },
     {
       title: "Databases",
-      skills: [{ name: "SQL", icon: <SiMysql />, color: "#00758f" }],
+      skills: [
+        { name: "MySQL", icon: <SiMysql />, color: "#00758f" },
+        { name: "SQLite",icon: <SiSqlite />, color: "#003b57"  }
+      ],
     },
     {
       title: "Tools & Technologies",

@@ -33,7 +33,6 @@ const Navbar = () => {
       <div className="container">
         {/* Logo & Name */}
         <Link className="navbar-brand" to="/">
-          <img src={logo} alt="Logo" />
           Ajeet Verma
         </Link>
 
