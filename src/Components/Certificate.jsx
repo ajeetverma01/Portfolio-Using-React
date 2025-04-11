@@ -8,8 +8,6 @@ import testImg6 from '../assets/js2.PNG';
 import testImg7 from '../assets/py.PNG';
 import testImg8 from '../assets/web-dev.PNG';
 import testImg9 from '../assets/data-sc.PNG';
-import cer1 from '../assets/Certificates/edureka-web-dev.pdf';
-import cer2 from '../assets/Certificates/edureka-data-sc.pdf';
 
 const certificates = [
   {
