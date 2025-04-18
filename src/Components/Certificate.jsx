@@ -8,6 +8,7 @@ import testImg6 from '../assets/js2.PNG';
 import testImg7 from '../assets/py.PNG';
 import testImg8 from '../assets/web-dev.PNG';
 import testImg9 from '../assets/data-sc.PNG';
+import testImg10 from '../assets/c1.png';
 
 const certificates = [
   {
@@ -51,6 +52,13 @@ const certificates = [
     date: 'February 2025',
     link: 'https://www.hackerrank.com/certificates/3093804de163',
     image: testImg4,
+  },
+  {
+    title: 'Certificate of participation',
+    issuer: 'B.L.A.',
+    date: 'March 2025',
+    link: 'https://www.hackerrank.com/certificates/dce02f88cb6d',
+    image: testImg10,
   },
   {
     title: 'JavaScript (Basic)',
