@@ -57,7 +57,7 @@ const certificates = [
     title: 'Certificate of participation',
     issuer: 'B.L.A.',
     date: 'March 2025',
-    link: 'https://www.hackerrank.com/certificates/dce02f88cb6d',
+    link: '/certificates/c1.png',
     image: testImg10,
   },
   {
