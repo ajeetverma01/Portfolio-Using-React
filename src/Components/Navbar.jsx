@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./CSS/navbar.css";
-import Swal from "sweetalert2"; 
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -17,18 +16,7 @@ const Navbar = () => {
 
   const handleLinkClick = () => setMenuOpen(false);
 
-  const handleResumeClick = (e) => {
-    e.preventDefault(); // Prevent navigation
-    Swal.fire({
-      title: "🚀 Coming Soon!",
-      text: "My resume link is under process. Stay tuned!",
-      icon: "info",
-      confirmButtonText: "Okay",
-      confirmButtonColor: "#ffcc00",
-      background: "#1b1b1b",
-      color: "#fff",
-    });
-  };
+  
 
 
   return (
