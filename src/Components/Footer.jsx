@@ -36,6 +36,8 @@ const Footer = () => {
         </div>
       </div>
 
+      <br />
+
       {/* Bottom Section */}
       <div className="footer-bottom">
         <p>© 2025 Ajeet Verma. All Rights Reserved.</p>
