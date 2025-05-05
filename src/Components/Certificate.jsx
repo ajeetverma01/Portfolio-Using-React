@@ -9,6 +9,7 @@ import testImg7 from '../assets/py.PNG';
 import testImg8 from '../assets/web-dev.PNG';
 import testImg9 from '../assets/data-sc.PNG';
 import testImg10 from '../assets/c1.png';
+import testImg11 from '/certificates/msitm.jpg';
 
 const certificates = [
   {
@@ -37,7 +38,7 @@ const certificates = [
     issuer: 'MSITM Degree College',
     date: 'August 2024',
     link: '/certificates/msitm.jpg',
-    image: testImg2,
+    image: testImg11,
   },
   {
     title: 'Data Science & M.L.',
