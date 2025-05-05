@@ -36,7 +36,7 @@ const certificates = [
     title: 'Certificate of Merit',
     issuer: 'MSITM Degree College',
     date: 'August 2024',
-    link: 'https://www.hackerrank.com/certificates/3918e972caa2',
+    link: '/certificates/msitm.jpg',
     image: testImg2,
   },
   {
