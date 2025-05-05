@@ -1,0 +1,24 @@
+.project-heading {
+    position: relative;
+    font-size: 32px;
+    font-weight: bold;
+    color: #89bc25;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .project-heading::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 3px;
+    width: 0;
+    background-color: #89bc25;
+    transition: width 0.7s ease-out;
+  }
+  
+  .underline-animate::after {
+    width: 100%;
+  }
+  

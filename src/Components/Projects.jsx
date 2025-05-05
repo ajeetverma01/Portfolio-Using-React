@@ -1,5 +1,28 @@
-import React from "react";
-import { FaLaptopCode, FaBook, FaGlobe, FaClipboardList, FaComments, FaShoppingCart, FaDesktop, FaGraduationCap, FaChalkboardTeacher, FaUserTie } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import "./CSS/project.css";
+import {
+  FaLaptopCode,
+  FaGlobe,
+  FaClipboardList,
+  FaComments,
+  FaShoppingCart,
+  FaGraduationCap
+} from "react-icons/fa";
+
+// Animated heading component
+const ProjectsHeading = () => {
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    setAnimate(true);
+  }, []);
+
+  return (
+    <h2 className={`project-heading ${animate ? "underline-animate" : ""} text-center mb-5`}>
+      My Projects
+    </h2>
+  );
+};
 
 const projects = [
   {
@@ -31,7 +54,7 @@ const projects = [
     title: "Bucket List",
     description: "A CLI-based application using Java and MySQL to track personal goals.",
     github: "https://github.com/ajeetverma01/Bucket-List-using-JAVA.git",
-    live: "https://github.com/ajeetverma01/Bucket-List-using-JAVA.git ",
+    live: "https://github.com/ajeetverma01/Bucket-List-using-JAVA.git",
     icon: <FaClipboardList size={40} color="#240A34" />,
   },
   {
@@ -39,7 +62,7 @@ const projects = [
     title: "Chatting App",
     description: "A Java-based real-time chatting application using sockets.",
     github: "https://github.com/ajeetverma01/Chatting-Application-Using-Java-and-Socket-Programming.git",
-    live: "https://github.com/ajeetverma01/Chatting-Application-Using-Java-and-Socket-Programming.git ",
+    live: "https://github.com/ajeetverma01/Chatting-Application-Using-Java-and-Socket-Programming.git",
     icon: <FaComments size={40} color="#240A34" />,
   },
   {
@@ -47,32 +70,30 @@ const projects = [
     title: "College Management System",
     description: "A Java-based management system for college administration.",
     github: "https://github.com/ajeetverma01/college-management-system.git",
-    live: "https://www.linkedin.com/posts/ajeetverma01_im-happy-to-share-this-college-management-activity-7199015708934979586-wMQk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEuWzFIBWoumYzr2EiwB0KV2u1MFFnUztpg",
-    icon: <FaGraduationCap size={40} color="#240A34 " />,
+    live: "https://www.linkedin.com/posts/ajeetverma01_im-happy-to-share-this-college-management-activity-7199015708934979586-wMQk",
+    icon: <FaGraduationCap size={40} color="#240A34" />,
   },
-  
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-5" style={{ backgroundColor: "#001a0e", color: "#2C2C2C" }}>
-      <div className="container">
-        <h2 className="text-center mb-5" style={{ fontSize: "32px", fontWeight: "bold", color: "#89bc25" }}>
-          My Projects
-        </h2>
+    <section id="projects" className="py-5" style={{ backgroundColor: "#001100", color: "#2C2C2C" }}>
+      <div className="container justify-content-center">
+        <ProjectsHeading />
+
         <div className="row justify-content-center">
           {projects.map((project) => (
             <div key={project.id} className="col-lg-4 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
               <div
                 className="card position-relative p-4 text-center"
                 style={{
-                  background: "#718C6A",
+                  background: "#000800",
                   color: "#FFF8DC",
                   borderRadius: "15px",
                   width: "300px",
                   height: "300px",
                   transition: "transform 0.3s, box-shadow 0.3s",
-                  boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.2)",
+                  boxShadow: "0 4px 8px rgba(0, 88, 50, 0.5)",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-3px)";
@@ -110,7 +131,6 @@ const Projects = () => {
                     style={{
                       width: "40px",
                       height: "40px",
-                      // borderRadius: "50%",
                       border: "2px solid #2C2C2C",
                       backgroundColor: "#9FB3DF",
                       color: "#121212",
@@ -139,7 +159,7 @@ const Projects = () => {
                       height: "40px",
                       border: "2px solid #2C2C2C",
                       backgroundColor: "#9FB3DF",
-                      opacity:"80%",
+                      opacity: "80%",
                       color: "#121212",
                       transition: "background 0.3s, color 0.3s",
                     }}
@@ -159,12 +179,25 @@ const Projects = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="text-center mt-4">
-          <a href="https://github.com/ajeetverma01" target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ backgroundColor: "#89bc25", borderColor: "#89bc25", padding: "10px 20px", fontSize: "18px", fontWeight: "bold" }}>
+
+        <div className="text-center mt-4">
+          <a
+            href="https://github.com/ajeetverma01"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+            style={{
+              backgroundColor: "#89bc25",
+              borderColor: "#89bc25",
+              padding: "10px 20px",
+              fontSize: "18px",
+              fontWeight: "bold"
+            }}
+          >
             View All Projects on GitHub
           </a>
         </div>
+      </div>
     </section>
   );
 };
