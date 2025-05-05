@@ -33,6 +33,13 @@ const certificates = [
     image: testImg2,
   },
   {
+    title: 'Certificate of Merit',
+    issuer: 'MSITM Degree College',
+    date: 'August 2024',
+    link: 'https://www.hackerrank.com/certificates/3918e972caa2',
+    image: testImg2,
+  },
+  {
     title: 'Data Science & M.L.',
     issuer: 'Edureka',
     date: 'May 2024',
