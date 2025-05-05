@@ -33,19 +33,20 @@ const certificates = [
     image: testImg2,
   },
   {
-    title: 'SQL (Basic)',
-    issuer: 'Hackerrank',
-    date: 'February 2025',
-    link: 'https://www.hackerrank.com/certificates/5a652d26bcb4',
-    image: testImg3,
-  },
-  {
     title: 'Data Science & M.L.',
     issuer: 'Edureka',
     date: 'May 2024',
     link: '/certificates/edureka-data-sc.pdf',
     image: testImg9,
   },
+  {
+    title: 'SQL (Basic)',
+    issuer: 'Hackerrank',
+    date: 'February 2025',
+    link: 'https://www.hackerrank.com/certificates/5a652d26bcb4',
+    image: testImg3,
+  },
+  
   {
     title: 'CSS (Basic)',
     issuer: 'Hackerrank',
