@@ -9,7 +9,7 @@ import testImg7 from '../assets/py.PNG';
 import testImg8 from '../assets/web-dev.PNG';
 import testImg9 from '../assets/data-sc.PNG';
 import testImg10 from '../assets/c1.png';
-import testImg11 from '/certificates/msitm.jpg';
+import testImg11 from '../assets/msitm.jpg';
 
 const certificates = [
   {
