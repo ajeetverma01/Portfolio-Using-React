@@ -25,27 +25,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 
 - **Frontend**: React, Bootstrap
 - **Icons**: React Icons, Bootstrap Icons
-- **Deployment**:Netlify
-
----
-
-## 🧑‍💻 How to Run Locally
-
-1. Clone the repository
-```bash
-git clone https://github.com/ajeetverma01/Portfolio-Using-React.git
-cd Portfolio-Using-React
-```
-
-2. Install dependencies
-```bash
-npm install
-```
-
-3. Run the development server
-```bash
-npm run dev
-```
+- **Deployment**: Netlify
 
 ---
 
