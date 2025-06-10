@@ -27,6 +27,8 @@ const certificates = [
     link: '/certificates/edureka-web-dev.pdf',
     image: testImg8,
   },
+
+  // This certificate is added
   
   {
     title: 'Naukari Campus Contest',
