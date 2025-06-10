@@ -34,6 +34,13 @@ const certificates = [
     image: testImg2,
   },
   {
+    title: 'Java (Basic)',
+    issuer: 'Hackerrank',
+    date: 'February 2025',
+    link: 'https://www.hackerrank.com/certificates/3918e972caa2',
+    image: testImg2,
+  },
+  {
     title: 'Certificate of Merit',
     issuer: 'MSITM Degree College',
     date: 'August 2024',
