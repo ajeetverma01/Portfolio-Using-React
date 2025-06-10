@@ -27,6 +27,7 @@ const certificates = [
     link: '/certificates/edureka-web-dev.pdf',
     image: testImg8,
   },
+  
   {
     title: 'Naukari Campus Contest',
     issuer: 'Naukari',
