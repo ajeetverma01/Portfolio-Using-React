@@ -34,19 +34,20 @@ const certificates = [
     link: 'https://www.naukri.com/campus/certificates/young_turks_round_1_achievement/v0/6707fd10e3b9a668e00026d4?utm_source=certificate&utm_medium=copy&utm_campaign=6707fd10e3b9a668e00026d4',
     image: testImg12,
   },
-  {
-    title: 'Java (Basic)',
-    issuer: 'Hackerrank',
-    date: 'February 2025',
-    link: 'https://www.hackerrank.com/certificates/3918e972caa2',
-    image: testImg2,
-  },
+  
   {
     title: 'Certificate of Merit',
     issuer: 'MSITM Degree College',
     date: 'August 2024',
     link: '/certificates/msitm.jpg',
     image: testImg11,
+  },
+  {
+    title: 'Java (Basic)',
+    issuer: 'Hackerrank',
+    date: 'February 2025',
+    link: 'https://www.hackerrank.com/certificates/3918e972caa2',
+    image: testImg2,
   },
   {
     title: 'Data Science & M.L.',
