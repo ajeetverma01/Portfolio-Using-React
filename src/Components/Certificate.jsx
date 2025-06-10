@@ -10,6 +10,7 @@ import testImg8 from '../assets/web-dev.PNG';
 import testImg9 from '../assets/data-sc.PNG';
 import testImg10 from '../assets/c1.png';
 import testImg11 from '../assets/msitm.jpg';
+import testImg12 from '../assets/nak1.PNG';
 
 const certificates = [
   {
@@ -27,11 +28,11 @@ const certificates = [
     image: testImg8,
   },
   {
-    title: 'Java (Basic)',
-    issuer: 'Hackerrank',
-    date: 'February 2025',
-    link: 'https://www.hackerrank.com/certificates/3918e972caa2',
-    image: testImg2,
+    title: 'Naukari Campus Contest',
+    issuer: 'Naukari',
+    date: 'october 2024',
+    link: 'https://www.naukri.com/campus/certificates/young_turks_round_1_achievement/v0/6707fd10e3b9a668e00026d4?utm_source=certificate&utm_medium=copy&utm_campaign=6707fd10e3b9a668e00026d4',
+    image: testImg12,
   },
   {
     title: 'Java (Basic)',
