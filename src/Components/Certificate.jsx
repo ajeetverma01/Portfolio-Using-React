@@ -29,7 +29,6 @@ const certificates = [
   },
 
   // This certificate is added
-  
   {
     title: 'Naukari Campus Contest',
     issuer: 'Naukari',
