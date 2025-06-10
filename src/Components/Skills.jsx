@@ -54,6 +54,8 @@ const Skills = () => {
       skills: [
         { name: "Node.js", icon: <FaNodeJs />, color: "#4c9a6a" },
         { name: "Java Full Stack (Learning)", icon: <FaJava />, color: "#f89820", textColor: "#222" },
+        { name: "Hibernate", icon: <FaDatabase />, color: "#59666C" },
+        { name: "HQL", icon: <FaDatabase />, color: "#8E8E8E" },
       ],
     },
     {
