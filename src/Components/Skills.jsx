@@ -9,6 +9,7 @@ import {
   FaJava,
   FaPython,
   FaGithub,
+  FaDatabase,
   
 } from "react-icons/fa";
 import {
