@@ -30,10 +30,10 @@ const certificates = [
     image: testImg13,
   },
   {
-    title: 'Internet- Then, Now and Next',
+    title: 'Coding Challenge',
     issuer: 'Naukri',
     date: 'june 2025',
-    link: 'https://www.naukri.com/campus/certificates/participation/v0/68622fa927995d505767c4d9?utm_source=certificate&utm_medium=copy&utm_campaign=68622fa927995d505767c4d9',
+    link: 'https://www.naukri.com/campus/certificates/participation/v0/68480ca227995d505767c106?utm_source=certificate&utm_medium=copy&utm_campaign=68480ca227995d505767c106',
     image: testImg14,
   },
   {
