@@ -44,7 +44,7 @@ const certificates = [
     issuer: 'Naukri',
     date: 'october 2024',
     link: 'https://www.naukri.com/campus/certificates/young_turks_round_1_achievement/v0/6707fd10e3b9a668e00026d4?utm_source=certificate&utm_medium=copy&utm_campaign=6707fd10e3b9a668e00026d4',
-    image: testImg13,
+    image: testImg12,
   },
   
   {
