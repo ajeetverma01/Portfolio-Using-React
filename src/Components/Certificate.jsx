@@ -22,13 +22,7 @@ const certificates = [
     link: 'https://www.hackerrank.com/certificates/3a4f04e5651e',
     image: testImg1,
   },
-  {
-    title: 'Internet- Then, Now and Next',
-    issuer: 'Naukri',
-    date: 'june 2025',
-    link: 'https://www.naukri.com/campus/certificates/participation/v0/68622fa927995d505767c4d9?utm_source=certificate&utm_medium=copy&utm_campaign=68622fa927995d505767c4d9',
-    image: testImg13,
-  },
+  
   {
     title: 'Coding Challenge',
     issuer: 'Naukri',
@@ -66,6 +60,13 @@ const certificates = [
     date: 'February 2025',
     link: 'https://www.hackerrank.com/certificates/3918e972caa2',
     image: testImg2,
+  },
+  {
+    title: 'Internet- Then, Now and Next',
+    issuer: 'Naukri',
+    date: 'june 2025',
+    link: 'https://www.naukri.com/campus/certificates/participation/v0/68622fa927995d505767c4d9?utm_source=certificate&utm_medium=copy&utm_campaign=68622fa927995d505767c4d9',
+    image: testImg13,
   },
   {
     title: 'Data Science & M.L.',
