@@ -21,6 +21,13 @@ const certificates = [
     image: testImg1,
   },
   {
+    title: 'Internet- Then, Now and Next',
+    issuer: 'Naukri',
+    date: 'june 2025',
+    link: 'https://www.naukri.com/campus/certificates/participation/v0/68622fa927995d505767c4d9?utm_source=certificate&utm_medium=copy&utm_campaign=68622fa927995d505767c4d9',
+    image: testImg12,
+  },
+  {
     title: 'Web Development Internship',
     issuer: 'Edureka',
     date: 'November 2024',
@@ -30,8 +37,8 @@ const certificates = [
 
   // This certificate is added
   {
-    title: 'Naukari Campus Contest',
-    issuer: 'Naukari',
+    title: 'Naukri Campus Contest',
+    issuer: 'Naukri',
     date: 'october 2024',
     link: 'https://www.naukri.com/campus/certificates/young_turks_round_1_achievement/v0/6707fd10e3b9a668e00026d4?utm_source=certificate&utm_medium=copy&utm_campaign=6707fd10e3b9a668e00026d4',
     image: testImg12,
