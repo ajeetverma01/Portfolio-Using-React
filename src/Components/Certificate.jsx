@@ -11,6 +11,7 @@ import testImg9 from '../assets/data-sc.PNG';
 import testImg10 from '../assets/c1.png';
 import testImg11 from '../assets/msitm.jpg';
 import testImg12 from '../assets/nak1.PNG';
+import testImg13 from '../assets/nak2.PNG';
 
 const certificates = [
   {
