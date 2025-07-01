@@ -91,7 +91,7 @@ const certificates = [
     image: testImg4,
   },
   {
-    title: 'Certificate of participation',
+    title: 'Technical workshop',
     issuer: 'B.L.A.',
     date: 'March 2025',
     link: '/certificates/c1.png',
