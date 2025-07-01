@@ -30,6 +30,13 @@ const certificates = [
     image: testImg12,
   },
   {
+    title: 'Internet- Then, Now and Next',
+    issuer: 'Naukri',
+    date: 'june 2025',
+    link: 'https://www.naukri.com/campus/certificates/participation/v0/68622fa927995d505767c4d9?utm_source=certificate&utm_medium=copy&utm_campaign=68622fa927995d505767c4d9',
+    image: testImg14,
+  },
+  {
     title: 'Web Development Internship',
     issuer: 'Edureka',
     date: 'November 2024',
