@@ -45,9 +45,15 @@ const Navbar = () => {
               <li><Link to="/certificate" className={`nav-link ${location.pathname === "/certificate" ? "active-link" : ""}`} onClick={handleLinkClick}>Certificate</Link></li>
               <li><Link to="/skills" className={`nav-link ${location.pathname === "/skills" ? "active-link" : ""}`} onClick={handleLinkClick}>Skills</Link></li>
               <li><Link to="/contact" className={`nav-link ${location.pathname === "/contact" ? "active-link" : ""}`} onClick={handleLinkClick}>Contact</Link></li>
-              <a href="/certificates/Main-Resume.pdf" className="nav-link resume-link">
-                Resume
-              </a>
+              <a
+  href="/certificates/Main-Resume.pdf"
+  className="nav-link resume-link"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Resume
+</a>
+
             </ul>
           </div>
         </div>
