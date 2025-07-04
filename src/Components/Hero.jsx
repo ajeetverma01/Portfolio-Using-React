@@ -25,10 +25,10 @@ const Hero = () => {
         {/* Left Section - Text */}
         <div className="hero-content">
           <h1 className="hero-title">
-            Hi, I'm <span>Ajeet Verma</span>
+            Hi, I'm <strong>Ajeet Verma</strong>
           </h1>
           <p className="hero-subtitle">
-            A passionate <strong>Software and Web Developer</strong> specialized in Java Full Stack technology.
+            A passionate <span>Software and Web Developer</span> specialized in Java Full Stack technology.
           </p>
           <div className="hero-buttons">
             <Link className="btn btn-warning btn-lg fw-bold shadow" to="/projects">
