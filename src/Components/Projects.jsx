@@ -44,7 +44,7 @@ const projects = [
   {
     id: 3,
     title: "Website for a School",
-    description: "Website designed for a school.",
+    description: "A fully functional static website designed for a school.",
     github: "https://github.com/ajeetverma01/Static-Website-for-a-School",
     live: "https://omsaiinternational.netlify.app/",
     icon: <FaGlobe size={40} color="#240A34" />,
