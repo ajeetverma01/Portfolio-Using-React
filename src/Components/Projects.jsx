@@ -43,6 +43,14 @@ const projects = [
   },
   {
     id: 3,
+    title: "Website for a School",
+    description: "Website designed for a school.",
+    github: "https://github.com/ajeetverma01/Static-Website-for-a-School",
+    live: "https://omsaiinternational.netlify.app/",
+    icon: <FaGlobe size={40} color="#240A34" />,
+  },
+  {
+    id: 4,
     title: "Smart Shop Manager",
     description: "A PHP and MySQL-based web app to manage inventory, customers, and sales.",
     github: "https://github.com/ajeetverma01/Smart-Shop-Manager-Using-Php.git",
@@ -50,7 +58,7 @@ const projects = [
     icon: <FaShoppingCart size={40} color="#240A34" />,
   },
   {
-    id: 4,
+    id: 5,
     title: "Bucket List",
     description: "A CLI-based application using Java and MySQL to track personal goals.",
     github: "https://github.com/ajeetverma01/Bucket-List-using-JAVA.git",
@@ -58,7 +66,7 @@ const projects = [
     icon: <FaClipboardList size={40} color="#240A34" />,
   },
   {
-    id: 5,
+    id: 6,
     title: "Chatting App",
     description: "A Java-based real-time chatting application using sockets.",
     github: "https://github.com/ajeetverma01/Chatting-Application-Using-Java-and-Socket-Programming.git",
@@ -66,7 +74,7 @@ const projects = [
     icon: <FaComments size={40} color="#240A34" />,
   },
   {
-    id: 6,
+    id: 7,
     title: "College Management System",
     description: "A Java-based management system for college administration.",
     github: "https://github.com/ajeetverma01/college-management-system.git",
