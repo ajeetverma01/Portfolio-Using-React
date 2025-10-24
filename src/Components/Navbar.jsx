@@ -6,6 +6,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [showResume, setShowResume] = useState(false); // modal toggle
+  
   const location = useLocation();
 
   useEffect(() => {
@@ -15,8 +16,6 @@ const Navbar = () => {
   }, []);
 
   const handleLinkClick = () => setMenuOpen(false);
-
-
 
 
   return (
