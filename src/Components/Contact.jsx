@@ -89,82 +89,12 @@ const Contact = () => {
 <div className="form-card shadow-lg p-4 animate-float">
   <h4 className="fw-bold mb-3 text-center">Send Your Thoughts</h4>
 
-  <form
-    name="contact"
-    method="POST"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
-    className="contact-form"
-    onSubmit={async (e) => {
-      e.preventDefault();
-      const form = e.target;
-
-      // Prepare body
-      const body = new URLSearchParams(new FormData(form)).toString();
-
-      try {
-        await fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body,
-        });
-
-        // show inline success message
-        const successEl = form.querySelector(".form-success");
-        const errorEl = form.querySelector(".form-error");
-        if (successEl) {
-          successEl.style.display = "block";
-          // hide after a few seconds (optional)
-          setTimeout(() => (successEl.style.display = "none"), 6000);
-        }
-        if (errorEl) errorEl.style.display = "none";
-
-        form.reset();
-      } catch (err) {
-        const errorEl = form.querySelector(".form-error");
-        if (errorEl) {
-          errorEl.style.display = "block";
-        } else {
-          alert("Oops! Something went wrong. Try again later.");
-        }
-        console.error("Form submit error:", err);
-      }
-    }}
-  >
-    {/* Netlify hidden inputs */}
-    <input type="hidden" name="form-name" value="contact" />
-    {/* honeypot field (hidden from users) */}
-    <input type="hidden" name="bot-field" />
-
-    <div className="mb-3">
-      <input
-        type="text"
-        name="name"
-        className="form-control custom-input"
-        placeholder="Your Name"
-        required
-      />
-    </div>
-
-    <div className="mb-3">
-      <input
-        type="email"
-        name="email"
-        className="form-control custom-input"
-        placeholder="Your Email"
-        required
-      />
-    </div>
-
-    <div className="mb-3">
-      <textarea
-        name="message"
-        className="form-control custom-input"
-        rows="4"
-        placeholder="Your Message"
-        required
-      ></textarea>
-    </div>
+  <form name="contact" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="contact" />
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" placeholder="Your Message" required></textarea>
+ 
 
     <button type="submit" className="btn btn-send w-100">
       Send Message
