@@ -54,31 +54,10 @@ const Contact = () => {
         <div className="form-card shadow-lg p-4 animate-float">
           <h4 className="fw-bold mb-3 text-center">Send Your Thoughts</h4>
 
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            onSubmit={(e) => {
-              const form = e.target;
-              const successMsg = form.querySelector(".form-success");
-              const errorMsg = form.querySelector(".form-error");
-
-              // Show success after submission
-              setTimeout(() => {
-                successMsg.style.display = "block";
-                errorMsg.style.display = "none";
-                form.reset();
-              }, 100);
-            }}
-          >
+          <form>
             {/* Hidden input for Netlify */}
             <input type="hidden" name="form-name" value="contact" />
-            <p style={{ display: "none" }}>
-              <label>
-                Don’t fill this out: <input name="bot-field" />
-              </label>
-            </p>
+            
 
             <div className="mb-3">
               <input type="text" name="name" placeholder="Your Name" required className="form-control custom-input" />
@@ -94,13 +73,7 @@ const Contact = () => {
               Send Message
             </button>
 
-            {/* Inline feedback messages */}
-            <div className="form-success" style={{ display: "none", marginTop: "12px", color: "#00ffb3" }}>
-              Thanks — your message has been sent. I’ll reply soon.
-            </div>
-            <div className="form-error" style={{ display: "none", marginTop: "12px", color: "#ff8a8a" }}>
-              Oops — something went wrong. Please try again later.
-            </div>
+              
           </form>
         </div>
       </div>

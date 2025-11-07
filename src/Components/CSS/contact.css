@@ -76,8 +76,9 @@
   border-radius: 18px;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  width: 390px;
-  height: 420px;
+  width: 100%;
+  max-width: 390px;
+  min-height: 400px;
   transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
@@ -97,7 +98,6 @@
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 
 /* Social Buttons */
 .social-btn {
@@ -141,6 +141,8 @@
   border-radius: 12px;
   padding: 12px 15px;
   transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .custom-input:focus {
@@ -165,6 +167,8 @@
   padding: 10px;
   transition: all 0.3s ease;
   box-shadow: 0 0 15px rgba(0, 224, 255, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-send:hover {
@@ -174,38 +178,21 @@
   color: #000000;
 }
 
-
-.form-success {
-  color: #00ffb3;
-  background: rgba(0, 255, 179, 0.06);
-  border: 1px solid rgba(0, 255, 179, 0.12);
-  padding: 10px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-align: center;
-  animation: successPop 0.35s ease;
+.btn-send::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  top: 0;
+  left: -120%;
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
 }
 
-.form-error {
-  color: #ff9b9b;
-  background: rgba(255, 155, 155, 0.04);
-  border: 1px solid rgba(255, 155, 155, 0.08);
-  padding: 10px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-align: center;
-  animation: errorPop 0.35s ease;
+.btn-send:hover::before {
+  left: 120%;
 }
-
-@keyframes successPop {
-  from { transform: translateY(6px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-@keyframes errorPop {
-  from { transform: translateY(6px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
 
 /* Floating animations */
 .animate-float {
@@ -225,38 +212,62 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .contact-content {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    padding: 0 1rem;
   }
-
   .contact-card,
   .form-card {
     width: 90%;
-    height: auto;
   }
-
+  .contact-subtitle {
+    max-width: 90%;
+    font-size: 1rem;
+  }
   .contact-title {
     font-size: 2rem;
   }
 }
 
-
-/* === Special Animations for Text & Contact Details === */
+@media (max-width: 576px) {
+  .contact-content {
+    gap: 1.5rem;
+  }
+  .contact-card,
+  .form-card {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .contact-title {
+    font-size: 1.7rem;
+  }
+  .contact-subtitle {
+    font-size: 0.95rem;
+  }
+  .btn-send {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+  .contact-container::before,
+  .contact-container::after {
+    width: 200px;
+    height: 200px;
+    filter: blur(80px);
+  }
+}
 
 /* Smooth glow on key headings */
 .contact-card h4,
 .form-card h4 {
   position: relative;
   display: inline-block;
-  background: linear-gradient(90deg, #ffffff, #ffffff);;
+  background: linear-gradient(90deg, #ffffff, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-
 
 /* Email & phone hover pop effect */
 .contact-card p {
@@ -266,9 +277,6 @@
 .contact-card p:hover {
   transform: scale(1.05);
 }
-
-
-
 
 /* Input & button entrance animation when section appears */
 .contact-form {
@@ -280,47 +288,15 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Button hover glow pulse */
-.btn-send {
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-send::before {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.15);
-  top: 0;
-  left: -120%;
-  transform: skewX(-20deg);
-  transition: all 0.5s ease;
-}
-
-.btn-send:hover::before {
-  left: 120%;
-}
-
-
-/* === Floating shimmer underline for "Reach Out Anytime" === */
-.contact-card h4::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  margin: 10px auto 0;
-  background: linear-gradient(90deg, #fffafa, #ffffff);;
-  border-radius: 3px;
-  animation: underlineGlow 2.5s ease-in-out infinite alternate;
-}
+/* Floating shimmer underline for headings */
+.contact-card h4::after,
 .form-card h4::after {
-    content: "";
+  content: "";
   display: block;
   width: 60px;
   height: 3px;
   margin: 10px auto 0;
-  background: linear-gradient(90deg, #fffafa, #ffffff);;
+  background: linear-gradient(90deg, #fffafa, #ffffff);
   border-radius: 3px;
   animation: underlineGlow 2.5s ease-in-out infinite alternate;
 }
@@ -329,27 +305,3 @@
   0% { box-shadow: 0 0 10px rgba(0,224,255,0.4); opacity: 0.7; }
   100% { box-shadow: 0 0 20px rgba(139,92,246,0.8); opacity: 1; }
 }
-
-
-
-
-
-
-
-
-
-/* 
-It is the theme : 
-🎨 Contact Page Theme Summary
-Primary style: Dark modern glassmorphism
-Background: Radial dark gradient (#0b0f14 → #11151c → #0a0d12)
-Accent color: Cyan blue (#00e0ff, #00b8ff, #007bff)
-Card design: Frosted glass (blurred, semi-transparent)
-Typography: Clean white with subtle glowing accents
-Buttons: Blue gradient with glowing hover and pulse animation
-Animations:
-Floating glow blobs in background
-Smooth fade and float on text and cards
-Underline shimmer on headings
-Mood: Techy, minimal, professional (no rainbow/purple tones) 
-*/
