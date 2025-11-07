@@ -85,31 +85,56 @@ const Contact = () => {
         </div>
 
         {/* Right Side: Static Form */}
-        <div className="form-card shadow-lg p-4 animate-float">
+        /* inside your Contact component (JSX) */
+<div className="form-card shadow-lg p-4 animate-float">
   <h4 className="fw-bold mb-3 text-center">Send Your Thoughts</h4>
 
   <form
     name="contact"
     method="POST"
     data-netlify="true"
-    onSubmit={(e) => {
+    data-netlify-honeypot="bot-field"
+    className="contact-form"
+    onSubmit={async (e) => {
       e.preventDefault();
       const form = e.target;
 
-      // Send form data to Netlify
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(new FormData(form)).toString(),
-      })
-        .then(() => {
-          alert("Thanks for reaching out! I’ll get back to you soon.");
-          form.reset();
-        })
-        .catch((error) => alert("Oops! Something went wrong. Try again later."));
+      // Prepare body
+      const body = new URLSearchParams(new FormData(form)).toString();
+
+      try {
+        await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body,
+        });
+
+        // show inline success message
+        const successEl = form.querySelector(".form-success");
+        const errorEl = form.querySelector(".form-error");
+        if (successEl) {
+          successEl.style.display = "block";
+          // hide after a few seconds (optional)
+          setTimeout(() => (successEl.style.display = "none"), 6000);
+        }
+        if (errorEl) errorEl.style.display = "none";
+
+        form.reset();
+      } catch (err) {
+        const errorEl = form.querySelector(".form-error");
+        if (errorEl) {
+          errorEl.style.display = "block";
+        } else {
+          alert("Oops! Something went wrong. Try again later.");
+        }
+        console.error("Form submit error:", err);
+      }
     }}
   >
+    {/* Netlify hidden inputs */}
     <input type="hidden" name="form-name" value="contact" />
+    {/* honeypot field (hidden from users) */}
+    <input type="hidden" name="bot-field" />
 
     <div className="mb-3">
       <input
@@ -144,8 +169,17 @@ const Contact = () => {
     <button type="submit" className="btn btn-send w-100">
       Send Message
     </button>
+
+    {/* Inline feedback elements (hidden by default) */}
+    <div className="form-success" style={{ display: "none", marginTop: "12px", color: "#00ffb3" }}>
+      Thanks — your message has been sent. I’ll reply soon.
+    </div>
+    <div className="form-error" style={{ display: "none", marginTop: "12px", color: "#ff8a8a" }}>
+      Oops — something went wrong. Please try again later.
+    </div>
   </form>
 </div>
+
 
       </div>
     </section>
