@@ -86,37 +86,67 @@ const Contact = () => {
 
         {/* Right Side: Static Form */}
         <div className="form-card shadow-lg p-4 animate-float">
-          <h4 className="fw-bold mb-3 text-center">Send Your Thoughts</h4>
-          <form className="contact-form">
-            <div className="mb-3">
-              <input
-                type="text"
-                className="form-control custom-input"
-                placeholder="Your Name"
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="email"
-                className="form-control custom-input"
-                placeholder="Your Email"
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <textarea
-                className="form-control custom-input"
-                rows="4"
-                placeholder="Your Message"
-                required
-              ></textarea>
-            </div>
-            <button type="button" className="btn btn-send w-100">
-              Send Message
-            </button>
-          </form>
-        </div>
+  <h4 className="fw-bold mb-3 text-center">Send Your Thoughts</h4>
+
+  <form
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    onSubmit={(e) => {
+      e.preventDefault();
+      const form = e.target;
+
+      // Send form data to Netlify
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString(),
+      })
+        .then(() => {
+          alert("Thanks for reaching out! I’ll get back to you soon.");
+          form.reset();
+        })
+        .catch((error) => alert("Oops! Something went wrong. Try again later."));
+    }}
+  >
+    <input type="hidden" name="form-name" value="contact" />
+
+    <div className="mb-3">
+      <input
+        type="text"
+        name="name"
+        className="form-control custom-input"
+        placeholder="Your Name"
+        required
+      />
+    </div>
+
+    <div className="mb-3">
+      <input
+        type="email"
+        name="email"
+        className="form-control custom-input"
+        placeholder="Your Email"
+        required
+      />
+    </div>
+
+    <div className="mb-3">
+      <textarea
+        name="message"
+        className="form-control custom-input"
+        rows="4"
+        placeholder="Your Message"
+        required
+      ></textarea>
+    </div>
+
+    <button type="submit" className="btn btn-send w-100">
+      Send Message
+    </button>
+  </form>
+</div>
+
       </div>
     </section>
   );
