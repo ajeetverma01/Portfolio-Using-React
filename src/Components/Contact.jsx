@@ -3,43 +3,12 @@ import "./CSS/contact.css";
 
 const Contact = () => {
   const socials = [
-    {
-      name: "LinkedIn",
-      icon: "bi-linkedin",
-      url: "https://www.linkedin.com/in/ajeetverma01",
-      color: "#0a66c2",
-    },
-    {
-      name: "GitHub",
-      icon: "bi-github",
-      url: "https://github.com/ajeetverma01",
-      color: "#24292e",
-    },
-    {
-      name: "Instagram",
-      icon: "bi-instagram",
-      url: "https://instagram.com/ajee.t__",
-      color:
-        "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)",
-    },
-    {
-      name: "LeetCode",
-      icon: "bi-code-slash",
-      url: "https://leetcode.com/u/ajeet_verma01",
-      color: "#f89f1b",
-    },
-    {
-      name: "HackerRank",
-      icon: "bi-terminal",
-      url: "https://www.hackerrank.com/ajeetverma01",
-      color: "#1ba94c",
-    },
-    {
-      name: "Threads",
-      icon: "bi-at",
-      url: "https://www.threads.net/@ajee.t__",
-      color: "#000",
-    },
+    { name: "LinkedIn", icon: "bi-linkedin", url: "https://www.linkedin.com/in/ajeetverma01", color: "#0a66c2" },
+    { name: "GitHub", icon: "bi-github", url: "https://github.com/ajeetverma01", color: "#24292e" },
+    { name: "Instagram", icon: "bi-instagram", url: "https://instagram.com/ajee.t__", color: "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)" },
+    { name: "LeetCode", icon: "bi-code-slash", url: "https://leetcode.com/u/ajeet_verma01", color: "#f89f1b" },
+    { name: "HackerRank", icon: "bi-terminal", url: "https://www.hackerrank.com/ajeetverma01", color: "#1ba94c" },
+    { name: "Threads", icon: "bi-at", url: "https://www.threads.net/@ajee.t__", color: "#000" },
   ];
 
   return (
@@ -72,10 +41,7 @@ const Contact = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-btn"
-                style={{
-                  background:
-                    social.color.startsWith("linear") ? social.color : social.color,
-                }}
+                style={{ background: social.color.startsWith("linear") ? social.color : social.color }}
                 title={social.name}
               >
                 <i className={`bi ${social.icon}`}></i>
@@ -84,33 +50,59 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Right Side: Static Form */}
-        /* inside your Contact component (JSX) */
-<div className="form-card shadow-lg p-4 animate-float">
-  <h4 className="fw-bold mb-3 text-center">Send Your Thoughts</h4>
+        {/* Right Side: Contact Form */}
+        <div className="form-card shadow-lg p-4 animate-float">
+          <h4 className="fw-bold mb-3 text-center">Send Your Thoughts</h4>
 
-  <form name="contact" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="contact" />
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="email" name="email" placeholder="Your Email" required />
-  <textarea name="message" placeholder="Your Message" required></textarea>
- 
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            onSubmit={(e) => {
+              const form = e.target;
+              const successMsg = form.querySelector(".form-success");
+              const errorMsg = form.querySelector(".form-error");
 
-    <button type="submit" className="btn btn-send w-100">
-      Send Message
-    </button>
+              // Show success after submission
+              setTimeout(() => {
+                successMsg.style.display = "block";
+                errorMsg.style.display = "none";
+                form.reset();
+              }, 100);
+            }}
+          >
+            {/* Hidden input for Netlify */}
+            <input type="hidden" name="form-name" value="contact" />
+            <p style={{ display: "none" }}>
+              <label>
+                Don’t fill this out: <input name="bot-field" />
+              </label>
+            </p>
 
-    {/* Inline feedback elements (hidden by default) */}
-    <div className="form-success" style={{ display: "none", marginTop: "12px", color: "#00ffb3" }}>
-      Thanks — your message has been sent. I’ll reply soon.
-    </div>
-    <div className="form-error" style={{ display: "none", marginTop: "12px", color: "#ff8a8a" }}>
-      Oops — something went wrong. Please try again later.
-    </div>
-  </form>
-</div>
+            <div className="mb-3">
+              <input type="text" name="name" placeholder="Your Name" required className="form-control custom-input" />
+            </div>
+            <div className="mb-3">
+              <input type="email" name="email" placeholder="Your Email" required className="form-control custom-input" />
+            </div>
+            <div className="mb-3">
+              <textarea name="message" placeholder="Your Message" required className="form-control custom-input" rows="4"></textarea>
+            </div>
 
+            <button type="submit" className="btn btn-send w-100">
+              Send Message
+            </button>
 
+            {/* Inline feedback messages */}
+            <div className="form-success" style={{ display: "none", marginTop: "12px", color: "#00ffb3" }}>
+              Thanks — your message has been sent. I’ll reply soon.
+            </div>
+            <div className="form-error" style={{ display: "none", marginTop: "12px", color: "#ff8a8a" }}>
+              Oops — something went wrong. Please try again later.
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   );
