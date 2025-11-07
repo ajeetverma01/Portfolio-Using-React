@@ -69,11 +69,11 @@ const Contact = () => {
               <textarea name="message" placeholder="Your Message" required className="form-control custom-input" rows="4"></textarea>
             </div>
 
-            <button type="submit" className="btn btn-send w-100">
+            <button className="btn btn-send w-100">
               Send Message
             </button>
 
-              
+
           </form>
         </div>
       </div>
