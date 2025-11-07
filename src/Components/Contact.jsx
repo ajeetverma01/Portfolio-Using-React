@@ -18,7 +18,7 @@ const Contact = () => {
     {
       name: "Instagram",
       icon: "bi-instagram",
-      url: "https://instagram.com/ajeet_me",
+      url: "https://instagram.com/ajee.t__",
       color:
         "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)",
     },
@@ -37,7 +37,7 @@ const Contact = () => {
     {
       name: "Threads",
       icon: "bi-at",
-      url: "https://www.threads.net/@ajeet_me",
+      url: "https://www.threads.net/@ajee.t__",
       color: "#000",
     },
   ];
