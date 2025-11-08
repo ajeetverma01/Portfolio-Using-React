@@ -54,27 +54,45 @@ const Contact = () => {
         <div className="form-card shadow-lg p-4 animate-float">
           <h4 className="fw-bold mb-3 text-center">Send Your Thoughts</h4>
 
-          <form>
+          <form name="contact" method="POST" data-netlify="true">
             {/* Hidden input for Netlify */}
             <input type="hidden" name="form-name" value="contact" />
-            
 
             <div className="mb-3">
-              <input type="text" name="name" placeholder="Your Name" required className="form-control custom-input" />
-            </div>
-            <div className="mb-3">
-              <input type="email" name="email" placeholder="Your Email" required className="form-control custom-input" />
-            </div>
-            <div className="mb-3">
-              <textarea name="message" placeholder="Your Message" required className="form-control custom-input" rows="4"></textarea>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="form-control custom-input"
+              />
             </div>
 
-            <button className="btn btn-send w-100">
+            <div className="mb-3">
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                className="form-control custom-input"
+              />
+            </div>
+
+            <div className="mb-3">
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                required
+                className="form-control custom-input"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <button type="submit" className="btn btn-send w-100">
               Send Message
             </button>
-
-
           </form>
+
         </div>
       </div>
     </section>
