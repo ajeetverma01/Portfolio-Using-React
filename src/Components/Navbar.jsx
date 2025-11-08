@@ -6,7 +6,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [showResume, setShowResume] = useState(false); // modal toggle
-  
+
   const location = useLocation();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const Navbar = () => {
       <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? "scrolled" : ""}`}>
         <div className="container">
           <Link className="navbar-brand" to="/">
-            Ajeet Verma
+            Ajeet Verma.dev
           </Link>
 
           <button
@@ -33,8 +33,11 @@ const Navbar = () => {
             aria-expanded={menuOpen}
             aria-label="Toggle navigation"
           >
-            {menuOpen ? "✖" : "☰"}
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
           </button>
+
 
           <div className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`} id="navbarNav">
             <ul className="navbar-nav ms-auto">
