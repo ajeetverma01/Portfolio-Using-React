@@ -305,3 +305,52 @@
   0% { box-shadow: 0 0 10px rgba(0,224,255,0.4); opacity: 0.7; }
   100% { box-shadow: 0 0 20px rgba(139,92,246,0.8); opacity: 1; }
 }
+
+
+
+
+
+
+
+
+
+
+/* 
+<form name="contact" method="POST" netlify onSubmit={handleSubmit}> 
+           
+            <input type="hidden" name="form-name" value="contact" />
+
+            <div className="mb-3">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="form-control custom-input"
+              />
+            </div>
+
+            <div className="mb-3">
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                className="form-control custom-input"
+              />
+            </div>
+
+            <div className="mb-3">
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                required
+                className="form-control custom-input"
+                rows="4"
+              ></textarea>
+            </div>
+
+            <button type="submit" className="btn btn-send w-100">
+              Send Message
+            </button>
+          </form> */
