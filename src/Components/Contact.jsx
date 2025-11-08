@@ -105,6 +105,7 @@ const Contact = () => {
                 className="form-control custom-input"
                 value={formData.name}
                 onChange={handleChange}
+                autoComplete="off"    
               />
             </div>
             <div className="mb-3">
@@ -116,6 +117,7 @@ const Contact = () => {
                 className="form-control custom-input"
                 value={formData.email}
                 onChange={handleChange}
+                autoComplete="off"  
               />
             </div>
             <div className="mb-3">
@@ -127,6 +129,7 @@ const Contact = () => {
                 rows="4"
                 value={formData.message}
                 onChange={handleChange}
+                autoComplete="off"  
               ></textarea>
             </div>
 
