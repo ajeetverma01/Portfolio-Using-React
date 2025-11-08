@@ -1,5 +1,5 @@
 import React from "react";
-// import "./CSS/contact.css";
+import "./CSS/contact.css";
 
 const Contact = () => {
   const socials = [
@@ -12,7 +12,7 @@ const Contact = () => {
   ];
 
 
-  
+
 
 
   return (
@@ -58,17 +58,37 @@ const Contact = () => {
         <div className="form-card shadow-lg p-4 animate-float">
           <h4 className="fw-bold mb-3 text-center">Send Your Thoughts</h4>
 
-          <form name="contact" netlify>
-  <p>
-    <label>Name <input type="text" name="name" /></label>
-  </p>
-  <p>
-    <label>Email <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>
+
+          {/* Yhi se shi krna h */}
+
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <p style={{ display: "none" }}>
+              <label>
+                Don’t fill this out: <input name="bot-field" />
+              </label>
+            </p>
+
+            <div className="mb-3">
+              <input type="text" name="name" placeholder="Your Name" required className="form-control custom-input" />
+            </div>
+            <div className="mb-3">
+              <input type="email" name="email" placeholder="Your Email" required className="form-control custom-input" />
+            </div>
+            <div className="mb-3">
+              <textarea name="message" placeholder="Your Message" required className="form-control custom-input" rows="4"></textarea>
+            </div>
+
+            <button type="submit" className="btn btn-send w-100">
+              Send Message
+            </button>
+          </form>
+
 
         </div>
       </div>
