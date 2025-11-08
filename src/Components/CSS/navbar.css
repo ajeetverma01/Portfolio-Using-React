@@ -196,18 +196,19 @@
 
 /* Hamburger Icon Animation */
 .navbar-toggler {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  width: 35px;
-  height: 30px;
-  transition: all 0.3s ease;
-  margin-left: auto;
+  width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1001;
   /* transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); */
 
 }
