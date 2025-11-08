@@ -54,7 +54,7 @@ const Contact = () => {
         <div className="form-card shadow-lg p-4 animate-float">
           <h4 className="fw-bold mb-3 text-center">Send Your Thoughts</h4>
 
-          <form name="contact" method="POST" data-netlify="true">
+          <form name="contact" method="POST" netlify>
             {/* Hidden input for Netlify */}
             <input type="hidden" name="form-name" value="contact" />
 
