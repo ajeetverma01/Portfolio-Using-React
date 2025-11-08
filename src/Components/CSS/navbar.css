@@ -191,11 +191,7 @@
   .resume-link {
     margin-top: 10px;
   }
-  .container{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
+ 
 }
 
 /* Hamburger Icon Animation */
