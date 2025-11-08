@@ -11,6 +11,23 @@ const Contact = () => {
     { name: "Threads", icon: "bi-at", url: "https://www.threads.net/@ajee.t__", color: "#000" },
   ];
 
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+  const data = new FormData(form);
+
+  await fetch("/", {
+    method: "POST",
+    body: data,
+  });
+
+  alert("Thank you! Your message has been sent.");
+  form.reset();
+};
+
+
   return (
     <section className="contact-container py-5">
       <div className="text-center mb-5 animate-fadeIn">
@@ -54,7 +71,7 @@ const Contact = () => {
         <div className="form-card shadow-lg p-4 animate-float">
           <h4 className="fw-bold mb-3 text-center">Send Your Thoughts</h4>
 
-          <form name="contact" method="POST" netlify>
+          <form name="contact" method="POST" netlify onSubmit={handleSubmit}> 
             {/* Hidden input for Netlify */}
             <input type="hidden" name="form-name" value="contact" />
 
