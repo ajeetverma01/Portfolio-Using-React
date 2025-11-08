@@ -315,42 +315,4 @@
 
 
 
-/* 
-<form name="contact" method="POST" netlify onSubmit={handleSubmit}> 
-           
-            <input type="hidden" name="form-name" value="contact" />
 
-            <div className="mb-3">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-                className="form-control custom-input"
-              />
-            </div>
-
-            <div className="mb-3">
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-                className="form-control custom-input"
-              />
-            </div>
-
-            <div className="mb-3">
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                required
-                className="form-control custom-input"
-                rows="4"
-              ></textarea>
-            </div>
-
-            <button type="submit" className="btn btn-send w-100">
-              Send Message
-            </button>
-          </form> */
