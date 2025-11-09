@@ -1,24 +1,342 @@
-.project-heading {
-    position: relative;
-    font-size: 32px;
-    font-weight: bold;
-    color: #89bc25;
-    display: inline-block;
-    margin-bottom: 20px;
+/* =========================
+   Projects Section
+========================= */
+.projects-container {
+  background: radial-gradient(circle at top left, #0c1019, #141a28 60%, #0d1118);
+  color: #f0f0f0;
+  min-height: 100vh;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Title */
+.projects-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #00cfff;
+  margin-bottom: 25px;
+  text-shadow: 0 0 6px rgba(0, 207, 255, 0.3);
+  position: relative;
+}
+
+.projects-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  margin: 10px auto 0;
+  background: linear-gradient(90deg, #00cfff, #007bbf, #00cfff);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
   }
-  
-  .project-heading::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    height: 3px;
-    width: 0;
-    background-color: #89bc25;
-    transition: width 0.7s ease-out;
+
+  100% {
+    background-position: -200% 0;
   }
-  
-  .underline-animate::after {
-    width: 100%;
+}
+
+
+/* Filter Buttons */
+.projects-filter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+/* ==================================
+   Futuristic Button Style
+================================== */
+
+
+
+
+
+
+
+
+
+/* ==================================
+   Projects Filter Buttons (Final)
+================================== */
+.projects-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.projects-filter button {
+  align-items: center;
+  appearance: none;
+  background-color: #1a1f2a;
+  /* dark base */
+  border-radius: 8px;
+  border: 2px solid #ff4c4c;
+  /* reddish border */
+  box-shadow: rgba(255, 76, 76, 0.2) 0 2px 4px,
+    rgba(0, 207, 255, 0.15) 0 7px 13px -3px,
+    #11151c 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #ff6b6b;
+  /* light red text */
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 45px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding: 0 22px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+  user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 15px;
+}
+
+/* Hover state */
+.projects-filter button:hover {
+  color: #fff;
+  border-color: #ff6b6b;
+  box-shadow: rgba(255, 76, 76, 0.3) 0 4px 8px,
+    rgba(0, 207, 255, 0.25) 0 7px 13px -3px,
+    #11151c 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+/* Focus (keyboard navigation) */
+.projects-filter button:focus-visible {
+  outline: none;
+  box-shadow: #11151c 0 0 0 1.5px inset,
+    rgba(255, 76, 76, 0.4) 0 2px 4px,
+    rgba(0, 207, 255, 0.3) 0 7px 13px -3px,
+    #11151c 0 -3px 0 inset;
+  transform: translateY(-4px);
+}
+
+/* Active (click/pressed) state */
+.projects-filter button:active {
+  box-shadow: #11151c 0 3px 7px inset;
+  transform: translateY(2px);
+  color: #4c4fff;
+  /* blue click effect */
+}
+
+/* Selected (active filter) state */
+.projects-filter button.active {
+  background: linear-gradient(135deg, rgba(255, 76, 76, 0.15), rgba(0, 207, 255, 0.2));
+  color: #fff;
+  border-color: rgba(0, 207, 255, 0.6);
+  box-shadow: 0 0 12px rgba(255, 76, 76, 0.3),
+    0 0 20px rgba(0, 207, 255, 0.25);
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 cards per row */
+  gap: 30px;
+  justify-content: center;
+  /* centers the whole grid when fewer columns */
+  justify-items: center;
+}
+
+@media(max-width:1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
+}
+
+@media(max-width:768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Project Tile */
+.project-tile {
+  background: rgba(224, 11, 11, 0.03);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 25px 20px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0, 207, 255, 0.08);
+}
+
+.project-tile:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0, 207, 255, 0.15);
+  border-color: #ff4c4c73;
+
+}
+
+/* Icon */
+.project-icon {
+  background: linear-gradient(135deg, rgba(0, 207, 255, 0.05), rgba(0, 123, 255, 0.08));
+  border-radius: 50%;
+  padding: 20px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.project-tile:hover .project-icon {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, rgba(0, 207, 255, 0.08), rgba(0, 123, 255, 0.12));
+}
+
+/* Title */
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #00cfff;
+  text-shadow: 0 0 3px rgba(0, 207, 255, 0.2);
+}
+
+/* Description */
+.project-desc {
+  font-size: 0.95rem;
+  color: #cfd8dc;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  max-height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Tech badges */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.project-tech span {
+  background: rgba(0, 207, 255, 0.06);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: #00cfff;
+  transition: all 0.3s ease;
+}
+
+.project-tech span:hover {
+  background: rgba(0, 207, 255, 0.12);
+}
+
+
+
+
+/* Buttons / Links */
+.project-links {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.project-links {
+  display: flex;
+  gap: 14px;
+  margin-top: auto;
+  justify-content: center;
+}
+
+/* Base Button Style */
+.btn-link {
+  position: relative;
+  border-radius: 0.6em;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.8em 1.8em;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  border: solid 2px transparent;
+  box-shadow:
+    inset 0px -6px 18px -6px rgba(3, 15, 20, 0),
+    inset rgba(54, 69, 75, 1) -1px -1px 6px 0px,
+    inset 12px 0px 12px -6px rgba(3, 15, 20, 0),
+    inset -12px 0px 12px -6px rgba(3, 15, 20, 0),
+    rgba(54, 69, 75, 1) -1px -1px 6px 0px;
+}
+
+/* GitHub Button */
+.btn-link.github {
+  background: linear-gradient(135deg, #7c2ff749, #355f688f);
+  border-color: #030f14;
+}
+
+.btn-link.github:hover {
+  box-shadow:
+    inset 0px -6px 18px -6px rgba(3, 15, 20, 1),
+    inset 0px 6px 18px -6px rgba(3, 15, 20, 1),
+    -1px -1px 6px 0px rgba(54, 69, 75, 1);
+  transform: translateY(-2px);
+  color: #fff;
+
+}
+
+.btn-link.github:active {
+  box-shadow:
+    inset 0px -12px 12px -6px rgba(3, 15, 20, 1),
+    inset 0px 12px 12px -6px rgba(3, 15, 20, 1);
+  transform: scale(0.96);
+}
+
+/* Live Demo Button */
+.btn-link.live {
+  background: linear-gradient(135deg, #7c2ff749, #355f688f);
+  border-color: #030f14;
+}
+
+.btn-link.live:hover {
+  box-shadow:
+    inset 0px -6px 18px -6px rgba(3, 15, 20, 1),
+    inset 0px 6px 18px -6px rgba(3, 15, 20, 1),
+    0 0 20px rgba(0, 224, 255, 0.35);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.btn-link.live:active {
+  box-shadow:
+    inset 0px -12px 12px -6px rgba(3, 15, 20, 1),
+    inset 0px 12px 12px -6px rgba(3, 15, 20, 1);
+  transform: scale(0.96);
+}
