@@ -13,12 +13,14 @@ import {
 } from "react-icons/fa";
 import {
   SiMysql,
+  SiGit,
   SiBootstrap,
   SiIntellijidea,
   SiEclipseide,
   SiC,
   SiCplusplus,
   SiSqlite,
+  SiTailwindcss, // ✅ added Tailwind icon
 } from "react-icons/si";
 import "./CSS/skills.css";
 
@@ -39,7 +41,6 @@ const Skills = () => {
         { name: "HTML5", icon: <FaHtml5 />, color: "rgba(227, 76, 38, 0.15)" },
         { name: "CSS3", icon: <FaCss3Alt />, color: "rgba(38, 77, 228, 0.15)" },
         { name: "JavaScript", icon: <FaJs />, color: "rgba(247, 223, 30, 0.15)" },
-        { name: "PHP", icon: <FaPhp />, color: "rgba(108, 99, 255, 0.15)" },
       ],
     },
     {
@@ -47,12 +48,14 @@ const Skills = () => {
       skills: [
         { name: "React", icon: <FaReact />, color: "rgba(97, 218, 251, 0.15)" },
         { name: "Bootstrap", icon: <SiBootstrap />, color: "rgba(121, 82, 179, 0.15)" },
+        { name: "Tailwind CSS", icon: <SiTailwindcss />, color: "rgba(56, 189, 248, 0.15)" }, // ✅ added here
       ],
     },
     {
       title: "Backend",
       skills: [
         { name: "Node.js", icon: <FaNodeJs />, color: "rgba(76, 154, 106, 0.15)" },
+        { name: "PHP", icon: <FaPhp />, color: "rgba(108, 99, 255, 0.15)" }, // ✅ moved here
         { name: "Java Full Stack (Learning)", icon: <FaJava />, color: "rgba(248, 152, 32, 0.15)" },
         { name: "Hibernate", icon: <FaDatabase />, color: "rgba(89, 102, 108, 0.15)" },
         { name: "HQL", icon: <FaDatabase />, color: "rgba(142, 142, 142, 0.15)" },
@@ -68,7 +71,7 @@ const Skills = () => {
     {
       title: "Tools & Technologies",
       skills: [
-        { name: "Git", icon: <FaGithub />, color: "rgba(51, 51, 51, 0.15)" },
+        { name: "Git", icon: <SiGit />, color: "rgba(51, 51, 51, 0.15)" },
         { name: "GitHub", icon: <FaGithub />, color: "rgba(34, 34, 34, 0.15)" },
         { name: "IntelliJ", icon: <SiIntellijidea />, color: "rgba(231, 111, 81, 0.15)" },
         { name: "Eclipse", icon: <SiEclipseide />, color: "rgba(93, 94, 141, 0.15)" },
