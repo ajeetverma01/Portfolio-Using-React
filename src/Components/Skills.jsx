@@ -10,7 +10,6 @@ import {
   FaPython,
   FaGithub,
   FaDatabase,
-  
 } from "react-icons/fa";
 import {
   SiMysql,
@@ -28,52 +27,51 @@ const Skills = () => {
     {
       title: "Programming Languages",
       skills: [
-        { name: "Java", icon: <FaJava />, color: "#f89820", textColor: "#222" },
-        { name: "Python", icon: <FaPython />, color: "#3776ab" },
-        { name: "C", icon: <SiC />, color: "#909090" },
-        { name: "C++", icon: <SiCplusplus />, color: "#00599c" },
+        { name: "Java", icon: <FaJava />, color: "rgba(248, 152, 32, 0.15)" },
+        { name: "Python", icon: <FaPython />, color: "rgba(55, 118, 171, 0.15)" },
+        { name: "C", icon: <SiC />, color: "rgba(144, 144, 144, 0.15)" },
+        { name: "C++", icon: <SiCplusplus />, color: "rgba(0, 89, 156, 0.15)" },
       ],
     },
     {
       title: "Web Development",
       skills: [
-        { name: "HTML5", icon: <FaHtml5 />, color: "#e34c26" },
-        { name: "CSS3", icon: <FaCss3Alt />, color: "#264de4" },
-        { name: "JavaScript", icon: <FaJs />, color: "#f7df1e", textColor: "#222" },
-        { name: "PHP", icon: <FaPhp />, color: "#6c63ff" },
+        { name: "HTML5", icon: <FaHtml5 />, color: "rgba(227, 76, 38, 0.15)" },
+        { name: "CSS3", icon: <FaCss3Alt />, color: "rgba(38, 77, 228, 0.15)" },
+        { name: "JavaScript", icon: <FaJs />, color: "rgba(247, 223, 30, 0.15)" },
+        { name: "PHP", icon: <FaPhp />, color: "rgba(108, 99, 255, 0.15)" },
       ],
     },
     {
       title: "Frontend",
       skills: [
-        { name: "React", icon: <FaReact />, color: "#61dafb", textColor: "#222" },
-        { name: "Bootstrap", icon: <SiBootstrap />, color: "#7952b3" },
+        { name: "React", icon: <FaReact />, color: "rgba(97, 218, 251, 0.15)" },
+        { name: "Bootstrap", icon: <SiBootstrap />, color: "rgba(121, 82, 179, 0.15)" },
       ],
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", icon: <FaNodeJs />, color: "#4c9a6a" },
-        { name: "Java Full Stack (Learning)", icon: <FaJava />, color: "#f89820", textColor: "#222" },
-        { name: "Hibernate", icon: <FaDatabase />, color: "#59666C" },
-        { name: "HQL", icon: <FaDatabase />, color: "#8E8E8E" },
+        { name: "Node.js", icon: <FaNodeJs />, color: "rgba(76, 154, 106, 0.15)" },
+        { name: "Java Full Stack (Learning)", icon: <FaJava />, color: "rgba(248, 152, 32, 0.15)" },
+        { name: "Hibernate", icon: <FaDatabase />, color: "rgba(89, 102, 108, 0.15)" },
+        { name: "HQL", icon: <FaDatabase />, color: "rgba(142, 142, 142, 0.15)" },
       ],
     },
     {
       title: "Databases",
       skills: [
-        { name: "MySQL", icon: <SiMysql />, color: "#00758f" },
-        { name: "SQLite",icon: <SiSqlite />, color: "#003b57"  }
+        { name: "MySQL", icon: <SiMysql />, color: "rgba(0, 117, 143, 0.15)" },
+        { name: "SQLite", icon: <SiSqlite />, color: "rgba(0, 59, 87, 0.15)" },
       ],
     },
     {
       title: "Tools & Technologies",
       skills: [
-        { name: "Git", icon: <FaGithub />, color: "#333" },
-        { name: "GitHub", icon: <FaGithub />, color: "#222" },
-        { name: "IntelliJ", icon: <SiIntellijidea />, color: "#e76f51" },
-        { name: "Eclipse", icon: <SiEclipseide />, color: "#5d5e8d" },
-
+        { name: "Git", icon: <FaGithub />, color: "rgba(51, 51, 51, 0.15)" },
+        { name: "GitHub", icon: <FaGithub />, color: "rgba(34, 34, 34, 0.15)" },
+        { name: "IntelliJ", icon: <SiIntellijidea />, color: "rgba(231, 111, 81, 0.15)" },
+        { name: "Eclipse", icon: <SiEclipseide />, color: "rgba(93, 94, 141, 0.15)" },
       ],
     },
   ];
@@ -87,8 +85,17 @@ const Skills = () => {
             <h3 className="skill-title">{category.title}</h3>
             <div className="skills-list mt-4 mb-4">
               {category.skills.map((skill, i) => (
-                <div key={i} className="skill-item" style={{ backgroundColor: skill.color }}>
-                  <div className="skill-icon">{skill.icon}</div>
+                <div
+                  key={i}
+                  className="skill-item"
+                  style={{
+                    backgroundColor: skill.color,
+                    borderLeft: "3px solid transparent",
+                  }}
+                >
+                  <div className="skill-icon" style={{ color: "#ffd700" }}>
+                    {skill.icon}
+                  </div>
                   <span className="skill-name">{skill.name}</span>
                 </div>
               ))}

@@ -1,91 +1,405 @@
-/* General Styles */
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #031f07;
-  color: #ffffff;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
-/* Skills Section */
+/* ============================================= */
+/* SKILLS SECTION - TERMINAL/CODE THEME */
+/* ============================================= */
+
 .skills-section {
-  text-align: center;
-  padding: 40px 15px;
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: #0d1117;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Grid Dots Background */
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle, rgba(255, 215, 0, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Code-style Heading */
 .skills-heading {
-  font-size: 2rem; /* Reduced from 2.5rem */
-  font-weight: 700;
-  color: #bfd400;
-  margin-bottom: 35px;
-  text-transform: uppercase;
+  text-align: left;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  color: #58a6ff;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
 }
 
-/* Skills Grid */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Slightly smaller cards */
-  gap: 25px;
-  justify-content: center;
-  }
+.skills-heading::before {
+  content: 'const ';
+  color: #ff7b72;
+  margin-right: 10px;
+}
 
-/* Skill Card */
+.skills-heading::after {
+  content: ' = {';
+  color: #79c0ff;
+}
+
+/* Subtitle */
+.skills-heading + .skills-grid::before {
+  content: '  // My Technical Arsenal';
+  position: absolute;
+  top: -40px;
+  left: 60px;
+  color: #8b949e;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Skills Grid - Bento Box Style */
+.skills-grid {
+  max-width: 1400px;
+  margin: 60px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Terminal Window Card */
 .skill-card {
-  background: linear-gradient(135deg, #1f2937, #374151);
-  border-radius: 10px;
-  padding: 18px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 0;
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+/* Terminal Header Bar */
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 35px;
+  background: #1c2128;
+  border-bottom: 1px solid #30363d;
+  z-index: 1;
+}
+
+/* Terminal Dots */
+.skill-card::after {
+  content: '●  ●  ●';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 0.8rem;
+  color: #484f58;
+  letter-spacing: 3px;
+  z-index: 2;
 }
 
 .skill-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+  border-color: #ffd700;
+  box-shadow: 0 8px 30px rgba(255, 215, 0, 0.15);
 }
 
+/* Skill Card Title - Terminal Prompt Style */
 .skill-title {
-  font-size: 1.2rem; /* Reduced from 1.4rem */
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 12px;
+  color: #58a6ff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 50px 20px 20px 20px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+  position: relative;
+  padding-left: 30px;
 }
 
-/* Skills List */
+.skill-title::before {
+  content: '❯';
+  position: absolute;
+  left: 0;
+  color: #ffd700;
+  font-size: 1.3rem;
+}
+
+/* Skills List - Code Block Style */
 .skills-list {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 8px;
-  justify-content: center;
+  margin: 20px;
+  padding: 15px;
+  background: #0d1117;
+  border-radius: 8px;
+  border: 1px solid #21262d;
 }
 
-/* Individual Skill */
+/* Individual Skill Item - Code Line */
 .skill-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.08); /* Slightly brighter background */
-  padding: 10px 16px;
+  gap: 12px;
+  padding: 10px 15px;
   border-radius: 6px;
-  font-size: 0.9rem;
+  color: #fff;
+  font-size: 0.95rem;
   font-weight: 500;
-  text-transform: uppercase;
-  transition: all 0.3s ease-in-out;
-  color: #e2e8f0; /* Light text for contrast */
+  font-family: 'Courier New', monospace;
+  transition: background 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  border-left: 3px solid transparent;
+}
+
+.skill-item::before {
+  content: '→';
+  position: absolute;
+  left: -5px;
+  color: #ffd700;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .skill-item:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 215, 0, 0.1);
+  transform: translateX(10px);
+  border-left-color: #ffd700;
 }
 
-/* Skill Icon */
+.skill-item:hover::before {
+  opacity: 1;
+}
+
+/* Skill Icon - Syntax Highlighting */
 .skill-icon {
-  font-size: 1.4rem; /* Slightly smaller */
-  margin-right: 8px;
-  opacity: 0.9; /* Less overpowering */
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: brightness(1.2);
 }
 
 /* Skill Name */
 .skill-name {
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); /* Enhances visibility */
+  font-weight: 1000;
+  letter-spacing: 0.5px;
+  color: #ffffff;
 }
+
+/* Line Numbers Effect */
+.skills-list::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #ffd700 0%, transparent 100%);
+  opacity: 0.5;
+}
+
+/* Closing Bracket at Bottom */
+.skills-grid::after {
+  content: '};';
+  position: absolute;
+  bottom: -60px;
+  left: 40px;
+  color: #79c0ff;
+  font-family: 'Courier New', monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* ============================================= */
+/* RESPONSIVE DESIGN */
+/* ============================================= */
+
+/* Tablets */
+@media (max-width: 991px) {
+  .skills-section {
+    padding: 80px 20px;
+  }
+
+  .skills-heading {
+    font-size: 2.2rem;
+    margin-left: 20px;
+  }
+
+  .skills-heading + .skills-grid::before {
+    left: 30px;
+    font-size: 0.8rem;
+  }
+
+  .skills-grid {
+    padding: 0 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .skills-grid::after {
+    left: 20px;
+    font-size: 2rem;
+  }
+
+  .skill-title {
+    font-size: 1rem;
+    margin: 45px 15px 15px 15px;
+  }
+
+  .skills-list {
+    margin: 15px;
+    padding: 12px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 60px 15px;
+  }
+
+  .skills-heading {
+    font-size: 1.5rem;
+    margin-left: 15px;
+    text-align: left;
+  }
+
+  .skills-heading::before {
+    content: '';
+  }
+
+  .skills-heading::after {
+    content: '';
+  }
+
+  .skills-heading + .skills-grid::before {
+    display: none;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 15px;
+    margin-top: 40px;
+  }
+
+  .skills-grid::after {
+    display: none;
+  }
+
+  .skill-card {
+    border-radius: 10px;
+  }
+
+  .skill-title {
+    font-size: 0.95rem;
+    margin: 40px 12px 12px 12px;
+    padding-left: 25px;
+  }
+
+  .skill-title::before {
+    font-size: 1.1rem;
+  }
+
+  .skills-list {
+    margin: 12px;
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .skill-item {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    gap: 10px;
+  }
+
+  .skill-item:hover {
+    transform: translateX(5px);
+  }
+
+  .skill-icon {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 50px 10px;
+  }
+
+  .skills-heading {
+    font-size: 1.3rem;
+    margin-left: 10px;
+  }
+
+  .skills-grid {
+    padding: 0 10px;
+  }
+
+  .skill-card::before {
+    height: 30px;
+  }
+
+  .skill-card::after {
+    top: 8px;
+    left: 12px;
+    font-size: 0.7rem;
+  }
+
+  .skill-title {
+    font-size: 0.9rem;
+    margin: 35px 10px 10px 10px;
+    padding-left: 20px;
+  }
+
+  .skills-list {
+    margin: 10px;
+    padding: 8px;
+  }
+
+  .skill-item {
+    padding: 7px 10px;
+    font-size: 0.8rem;
+  }
+
+  .skill-icon {
+    font-size: 1.1rem;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+  .skills-heading {
+    font-size: 1.1rem;
+  }
+
+  .skill-title {
+    font-size: 0.85rem;
+  }
+
+  .skill-item {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+
+  .skill-icon {
+    font-size: 1rem;
+  }
+}   
