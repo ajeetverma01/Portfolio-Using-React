@@ -20,8 +20,11 @@ import {
   SiC,
   SiCplusplus,
   SiSqlite,
+  SiHibernate,
   SiTailwindcss, // ✅ added Tailwind icon
 } from "react-icons/si";
+import { VscCode } from "react-icons/vsc";
+
 import "./CSS/skills.css";
 
 const Skills = () => {
@@ -57,7 +60,7 @@ const Skills = () => {
         { name: "Node.js", icon: <FaNodeJs />, color: "rgba(76, 154, 106, 0.15)" },
         { name: "PHP", icon: <FaPhp />, color: "rgba(108, 99, 255, 0.15)" }, // ✅ moved here
         { name: "Java Full Stack (Learning)", icon: <FaJava />, color: "rgba(248, 152, 32, 0.15)" },
-        { name: "Hibernate", icon: <FaDatabase />, color: "rgba(89, 102, 108, 0.15)" },
+        { name: "Hibernate", icon: <SiHibernate />, color: "rgba(89, 102, 108, 0.15)" },
         { name: "HQL", icon: <FaDatabase />, color: "rgba(142, 142, 142, 0.15)" },
       ],
     },
@@ -75,6 +78,7 @@ const Skills = () => {
         { name: "GitHub", icon: <FaGithub />, color: "rgba(34, 34, 34, 0.15)" },
         { name: "IntelliJ", icon: <SiIntellijidea />, color: "rgba(231, 111, 81, 0.15)" },
         { name: "Eclipse", icon: <SiEclipseide />, color: "rgba(93, 94, 141, 0.15)" },
+        { name: "VS Code", icon: <VscCode />, color: "rgba(0, 122, 204, 0.15)" },
       ],
     },
   ];
