@@ -122,19 +122,7 @@
     color: #111;
   }
 
-  /* Hamburger Menu */
-  .navbar-toggler {
-    background: transparent;
-    border: none;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: absolute;
-    right: 25px;
-    top: 18px;
-    z-index: 1001;
-  }
+ 
 
   .navbar-toggler:hover {
     transform: rotate(90deg);
@@ -195,54 +183,76 @@
   }
 
   /* Hamburger Icon Animation */
+ /* ============================================= */
+/* HAMBURGER MENU - Enhanced Glow + Positioning  */
+/* ============================================= */
+
+.navbar-toggler {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: none; /* Hidden on desktop */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 1001;
+}
+
+.bar {
+  width: 22px;
+  height: 2.5px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-origin: center;
+}
+
+/* Hover glow effect */
+.navbar-toggler:hover {
+  background: rgba(255, 204, 0, 0.1);
+  box-shadow: 0 0 12px rgba(255, 204, 0, 0.4);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.navbar-toggler:hover .bar {
+  background: #ffcc00;
+  box-shadow: 0 0 6px #ffcc00, 0 0 10px rgba(255, 204, 0, 0.6);
+}
+
+/* Smooth "X" animation */
+.navbar-toggler.open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  background: #ffcc00;
+}
+
+.navbar-toggler.open .bar:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.navbar-toggler.open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background: #ffcc00;
+}
+
+/* Subtle bounce when opening */
+.navbar-toggler.open {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+}
+
+/* Show only on mobile */
+@media (max-width: 991px) {
   .navbar-toggler {
-    width: 42px;
-      height: 42px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 1001;
-    /* transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); */
-
+    display: flex;
   }
-
-  .bar {
-    width: 100%;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 3px;
-    transition: all 0.4s ease;
-    /* transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); */
-
-  }
-
-  /* Hover glow */
-  .navbar-toggler:hover .bar {
-    background-color: #ffcc00;
-  }
-
-  /* Transform into X when open */
-  .navbar-toggler.open .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .navbar-toggler.open .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .navbar-toggler.open .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  .navbar-toggler:focus {
-    outline: none;
-    box-shadow: none;
-  }
-
+}

@@ -22,21 +22,21 @@ const Navbar = () => {
     <>
       <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? "scrolled" : ""}`}>
         <div className="container">
-          <Link className="navbar-brand" to="/">
-            Ajeet Verma.dev
-          </Link>
+            <Link className="navbar-brand" to="/">
+              Ajeet Verma.dev
+            </Link>
 
-          <button
-            className={`navbar-toggler ${menuOpen ? "open" : ""}`}
-            type="button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-expanded={menuOpen}
-            aria-label="Toggle navigation"
-          >
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </button>
+            <button
+              className={`navbar-toggler ${menuOpen ? "open" : ""}`}
+              type="button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-expanded={menuOpen}
+              aria-label="Toggle navigation"
+            >
+              <span className="bar"></span>
+              <span className="bar"></span>
+              <span className="bar"></span>
+            </button>
 
 
           <div className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`} id="navbarNav">
