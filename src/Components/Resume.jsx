@@ -97,7 +97,7 @@ const Resume = () => {
             <div className="info-card">
               <div className="info-icon">🔄</div>
               <h4>Latest Version</h4>
-              <p>Current as of 2024</p>
+              <p>Current as of 2025</p>
             </div>
           </div>
         </div>
