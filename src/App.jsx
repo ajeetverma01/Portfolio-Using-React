@@ -9,6 +9,7 @@ import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import ScrollToTop from "./Components/scrollToTop";
 import Certificate from "./Components/Certificate";
+import Resume from "./Components/Resume";
 
 
 function SEO() {
@@ -33,6 +34,9 @@ function SEO() {
         break;
       case "/contact":
         title = "Contact | Ajeet Verma";
+        break;
+      case "/resume":
+        title = "Resume | Ajeet Verma";
         break;
       default:
         title = "Ajeet Verma | Portfolio";
@@ -68,6 +72,7 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/certificate" element={<Certificate />} />
+        <Route path="/resume" element={<Resume />} />
       </Routes>
       <Footer />
     </Router>

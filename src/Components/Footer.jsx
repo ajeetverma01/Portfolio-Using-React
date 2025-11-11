@@ -21,7 +21,7 @@ const Footer = () => {
           <Link to="/about" className={`nav-link ${currentPath === "/about" ? "active-link" : ""}`}>About</Link>
           <Link to="/projects" className={`nav-link ${currentPath === "/projects" ? "active-link" : ""}`}>Projects</Link>
           <Link to="/skills" className={`nav-link ${currentPath === "/skills" ? "active-link" : ""}`}>Skills</Link>
-          <Link to="/skills" className={`nav-link ${currentPath === "/skills" ? "active-link" : ""}`}>Resume</Link>
+          <Link to="/resume" className={`nav-link ${currentPath === "/resume" ? "active-link" : ""}`}>Resume</Link>
         </div>
 
         {/* Right Section */}

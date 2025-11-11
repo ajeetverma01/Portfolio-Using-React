@@ -256,3 +256,10 @@
     display: flex;
   }
 }
+
+.navbar-nav .resume-link.active-link {
+  color: #ffffff !important;
+  box-shadow: none;
+  transform: none;
+  /* border: 1px solid rgba(255, 255, 255, 0.2); */
+}

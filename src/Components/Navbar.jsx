@@ -22,21 +22,21 @@ const Navbar = () => {
     <>
       <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? "scrolled" : ""}`}>
         <div className="container">
-            <Link className="navbar-brand" to="/">
-              Ajeet Verma.dev
-            </Link>
+          <Link className="navbar-brand" to="/">
+            Ajeet Verma.dev
+          </Link>
 
-            <button
-              className={`navbar-toggler ${menuOpen ? "open" : ""}`}
-              type="button"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-expanded={menuOpen}
-              aria-label="Toggle navigation"
-            >
-              <span className="bar"></span>
-              <span className="bar"></span>
-              <span className="bar"></span>
-            </button>
+          <button
+            className={`navbar-toggler ${menuOpen ? "open" : ""}`}
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-expanded={menuOpen}
+            aria-label="Toggle navigation"
+          >
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
 
 
           <div className={`collapse navbar-collapse ${menuOpen ? "show" : ""}`} id="navbarNav">
@@ -47,14 +47,14 @@ const Navbar = () => {
               <li><Link to="/certificate" className={`nav-link ${location.pathname === "/certificate" ? "active-link" : ""}`} onClick={handleLinkClick}>Certificate</Link></li>
               <li><Link to="/skills" className={`nav-link ${location.pathname === "/skills" ? "active-link" : ""}`} onClick={handleLinkClick}>Skills</Link></li>
               <li><Link to="/contact" className={`nav-link ${location.pathname === "/contact" ? "active-link" : ""}`} onClick={handleLinkClick}>Contact</Link></li>
-              <a
-                href="/certificates/Main-Resume.pdf"
-                className="nav-link resume-link"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/resume"
+                className= {`nav-link resume-link ${location.pathname === "/resume" ? "active-link" : ""}`}
+
               >
                 Resume
-              </a>
+              </Link>
+
 
             </ul>
           </div>
