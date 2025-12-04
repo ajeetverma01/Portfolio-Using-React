@@ -47,7 +47,7 @@ const Resume = () => {
               
               <div className="pdf-container">
                 <iframe
-                  src="/certificates/Main-Resume.pdf"
+                  src="/certificates/Ajeet_Verma_Resume.pdf"
                   title="Ajeet Verma Resume"
                   className="resume-pdf"
                 />
