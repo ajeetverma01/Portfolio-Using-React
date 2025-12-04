@@ -58,7 +58,7 @@ const Resume = () => {
             {/* Action Buttons */}
             <div className="resume-actions">
               <a
-                href="/certificates/Main-Resume.pdf"
+                href="/certificates/Ajeet_Verma_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="action-btn view-btn"
@@ -69,7 +69,7 @@ const Resume = () => {
               </a>
               
               <a
-                href="/certificates/Main-Resume.pdf"
+                href="/certificates/Ajeet_Verma_Resume.pdf"
                 download="Ajeet_Verma_Resume.pdf"
                 className="action-btn download-btn"
               >
