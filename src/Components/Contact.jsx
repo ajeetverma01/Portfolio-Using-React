@@ -58,7 +58,7 @@ const Contact = () => {
           <h4 className="fw-bold mb-3">Reach Out Anytime</h4>
           <p>
             <i className="bi bi-envelope-fill me-2 text-info"></i>
-            <a href="mailto:av401402@gmail.com" className="contact-link">i.ajeetverma01@gmail.com</a>
+            <a href="mailto:av401402@gmail.com" className="contact-link">av401402@gmail.com</a>
           </p>
           <p>
             <i className="bi bi-phone-fill me-2 text-success"></i> +91 6389695460
