@@ -72,6 +72,17 @@ const projectsData = [
     icon: "📋"
   },
   {
+    id: 12,
+    title: "Tik-Tak-Toe",
+    description: "Tik-Tak-Toe : A Web based game",
+    tech: ["Html", "CSS", "JS"],
+    github: "https://github.com/ajeetverma01/Tic-Tac-Toe-using-JS.git",
+    live: "https://tiktaktoebyajeet.netlify.app/",
+    isLive: true,
+    icon: "🎮"
+  },
+
+  {
     id: 5,
     title: "Chatting App",
     description: "Java-based real-time chatting application using sockets.",
