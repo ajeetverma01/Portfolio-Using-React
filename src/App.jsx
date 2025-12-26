@@ -11,7 +11,6 @@ import ScrollToTop from "./Components/scrollToTop";
 import Certificate from "./Components/Certificate";
 import Resume from "./Components/Resume";
 import Experience from "./Components/Experience";
-import SEO from "./Components/SEO";
 
 
 function SEOex() {
@@ -65,7 +64,6 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <SEO/>
       <SEOex />
       <Navbar />
       <Routes>
