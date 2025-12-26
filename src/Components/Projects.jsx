@@ -31,6 +31,36 @@ const projectsData = [
     isLive: true,
     icon: "💼"
   },
+   {
+    id: 7,
+    title: "NoteHub using Hibernate",
+    description: "A Hibernate-powered note management web app using JSP, Servlets, and SQL.",
+    tech: ["HTML", "CSS", "Servlet/JSP", "Java", "SQL", "HQL", "Hibernate"],
+    github: "https://github.com/ajeetverma01/NoteHub-Using-Hibernate.git",
+    live: null,
+    isLive: false,
+    icon: "📝"
+  },
+  {
+    id: 8,
+    title: "Static School Website",
+    description: "A simple, modern, and responsive website made for a school.",
+    tech: ["HTML", "CSS", "JS"],
+    github: "https://github.com/ajeetverma01/Static-Website-for-a-School",
+    live: "https://omsaiinternational.netlify.app/",
+    isLive: true,
+    icon: "🏫"
+  },
+  {
+    id: 9,
+    title: "ToDo List",
+    description: "A clean and responsive ToDo list app made using HTML, CSS, and JS.",
+    tech: ["HTML", "CSS", "JS"],
+    github: "https://github.com/ajeetverma01/To-Do-List-Maker",
+    live: null,
+    isLive: false,
+    icon: "✅"
+  },
   {
     id: 4,
     title: "Bucket List",
@@ -61,36 +91,7 @@ const projectsData = [
     isLive: true,
     icon: "🌐"
   },
-  {
-    id: 7,
-    title: "NoteHub using Hibernate",
-    description: "A Hibernate-powered note management web app using JSP, Servlets, and SQL.",
-    tech: ["HTML", "CSS", "Servlet/JSP", "Java", "SQL", "HQL", "Hibernate"],
-    github: "https://github.com/ajeetverma01/NoteHub-Using-Hibernate.git",
-    live: null,
-    isLive: false,
-    icon: "📝"
-  },
-  {
-    id: 8,
-    title: "Static School Website",
-    description: "A simple, modern, and responsive website made for a school.",
-    tech: ["HTML", "CSS", "JS"],
-    github: "https://github.com/ajeetverma01/Static-Website-for-a-School",
-    live: "https://omsaiinternational.netlify.app/",
-    isLive: true,
-    icon: "🏫"
-  },
-  {
-    id: 9,
-    title: "ToDo List",
-    description: "A clean and responsive ToDo list app made using HTML, CSS, and JS.",
-    tech: ["HTML", "CSS", "JS"],
-    github: "https://github.com/ajeetverma01/To-Do-List-Maker",
-    live: null,
-    isLive: false,
-    icon: "✅"
-  },
+ 
   {
     id: 10,
     title: "Website Clones Collection",
