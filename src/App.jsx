@@ -10,6 +10,7 @@ import Footer from "./Components/Footer";
 import ScrollToTop from "./Components/scrollToTop";
 import Certificate from "./Components/Certificate";
 import Resume from "./Components/Resume";
+import Experience from "./Components/Experience";
 
 
 function SEO() {
@@ -72,6 +73,7 @@ function App() {
         <Route path="/skills" element={<Skills />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/certificate" element={<Certificate />} />
+        <Route path="/experience" element={<Experience />} />
         <Route path="/resume" element={<Resume />} />
       </Routes>
       <Footer />
