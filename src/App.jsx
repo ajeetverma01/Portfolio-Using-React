@@ -1,5 +1,7 @@
+import { HelmetProvider } from "react-helmet-async";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import SEO from "./Components/SEO";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import About from "./Components/About";
@@ -39,6 +41,9 @@ function SEOex() {
       case "/resume":
         title = "Resume | Ajeet Verma";
         break;
+      case "/experience":
+        title = "Experience | Ajeet Verma";
+        break;
       default:
         title = "Ajeet Verma | Portfolio";
     }
@@ -62,22 +67,25 @@ function SEOex() {
 // ----------------------
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <SEOex />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Hero />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/certificate" element={<Certificate />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/resume" element={<Resume />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <ScrollToTop />
+        <SEOex/>
+        <SEO /> {/* Only one SEO component */}
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/certificate" element={<Certificate />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/resume" element={<Resume />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </HelmetProvider>
   );
 }
 
