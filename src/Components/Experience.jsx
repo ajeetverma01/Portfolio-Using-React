@@ -68,6 +68,7 @@ const Experience = () => {
                   <div className="logo-container">
                     <div className="company-logo wipro-logo">
                       <span className="logo-letter">W</span>
+                      
                       <div className="logo-border"></div>
                     </div>
                   </div>
