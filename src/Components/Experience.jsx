@@ -14,7 +14,8 @@ const Experience = () => {
 
           <div className="timeline-wrapper">
             {/* TCS Experience - Current */}
-            {/* <div className="timeline-block">
+            {/* From here */}
+            <div className="timeline-block">
               <div className="timeline-line active-line"></div>
               <div className="experience-item current-role">
                 <div className="item-header">
@@ -47,7 +48,7 @@ const Experience = () => {
                           <circle cx="12" cy="12" r="10"/>
                           <polyline points="12 6 12 12 16 14"/>
                         </svg>
-                        1 month
+                        <1 month
                       </span>
                       <span className="meta-divider">•</span>
                       <span className="meta-item employment-badge">Full Time · Chennai</span>
@@ -58,7 +59,8 @@ const Experience = () => {
                   <p>Working as a Graduate Trainee in the TCS Ignite Program, focusing on enterprise software and web development and modern technologies.</p>
                 </div>
               </div>
-            </div> */}
+            </div>
+            {/* To here */}
 
             {/* Wipro Experience */}
             <div className="timeline-block">
