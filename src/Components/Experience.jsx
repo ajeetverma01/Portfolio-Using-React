@@ -2,23 +2,23 @@ import React from "react";
 
 const Experience = () => {
   // Utility function (keep it above your component or in utils)
-function getExperienceDuration(startDate) {
-  const start = new Date(startDate);
-  const now = new Date();
+  function getExperienceDuration(startDate) {
+    const start = new Date(startDate);
+    const now = new Date();
 
-  let months =
-    (now.getFullYear() - start.getFullYear()) * 12 +
-    (now.getMonth() - start.getMonth());
+    let months =
+      (now.getFullYear() - start.getFullYear()) * 12 +
+      (now.getMonth() - start.getMonth());
 
-  // Adjust if the current day is before the joining day
-  if (now.getDate() < start.getDate()) {
-    months--;
+    // Adjust if the current day is before the joining day
+    if (now.getDate() < start.getDate()) {
+      months--;
+    }
+
+    if (months <= 0) return "< 1 month";
+    if (months === 1) return "1 month";
+    return `${months} months`;
   }
-
-  if (months <= 0) return "< 1 month";
-  if (months === 1) return "1 month";
-  return `${months} months`;
-}
 
   return (
     <section className="experience-section" id="experience">
@@ -32,67 +32,67 @@ function getExperienceDuration(startDate) {
           </div>
 
           <div className="timeline-wrapper">
-           {/* TCS Experience - Current */}
-<div className="timeline-block">
-  <div className="timeline-line active-line"></div>
+            {/* TCS Experience - Current */}
+            <div className="timeline-block">
+              <div className="timeline-line active-line"></div>
 
-  <div className="experience-item current-role">
-    <div className="item-header">
-      <div className="logo-container">
-        <div className="company-logo tcs-logo">
-          <span className="logo-letter">TCS</span>
-          <div className="logo-border"></div>
-        </div>
+              <div className="experience-item current-role">
+                <div className="item-header">
+                  <div className="logo-container">
+                    <div className="company-logo tcs-logo">
+                      <span className="logo-letter">TCS</span>
+                      <div className="logo-border"></div>
+                    </div>
 
-        <div className="current-indicator">
-          <span className="indicator-dot"></span>
-          <span className="indicator-text">Currently Working Here</span>
-        </div>
-      </div>
+                    <div className="current-indicator">
+                      <span className="indicator-dot"></span>
+                      <span className="indicator-text">Currently Working Here</span>
+                    </div>
+                  </div>
 
-      <div className="role-details">
-        <h3 className="role-title">Graduate Trainee – TCS Ignite</h3>
-        <p className="company-name">Tata Consultancy Services</p>
+                  <div className="role-details">
+                    <h3 className="role-title">Graduate Trainee – TCS Ignite</h3>
+                    <p className="company-name">Tata Consultancy Services</p>
 
-        <div className="meta-info">
-          <span className="meta-item">
-            <svg className="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-              <line x1="16" y1="2" x2="16" y2="6" />
-              <line x1="8" y1="2" x2="8" y2="6" />
-              <line x1="3" y1="10" x2="21" y2="10" />
-            </svg>
-            Jan 2026 – Present
-          </span>
+                    <div className="meta-info">
+                      <span className="meta-item">
+                        <svg className="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                          <line x1="16" y1="2" x2="16" y2="6" />
+                          <line x1="8" y1="2" x2="8" y2="6" />
+                          <line x1="3" y1="10" x2="21" y2="10" />
+                        </svg>
+                        Jan 2026 – Present
+                      </span>
 
-          <span className="meta-divider">•</span>
+                      <span className="meta-divider">•</span>
 
-          <span className="meta-item">
-            <svg className="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-            {getExperienceDuration("2026-01-21")}
-          </span>
+                      <span className="meta-item">
+                        <svg className="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                          <circle cx="12" cy="12" r="10" />
+                          <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                        {getExperienceDuration("2026-01-21")}
+                      </span>
 
-          <span className="meta-divider">•</span>
+                      <span className="meta-divider">•</span>
 
-          <span className="meta-item employment-badge">
-            Full Time · Chennai
-          </span>
-        </div>
-      </div>
-    </div>
+                      <span className="meta-item employment-badge">
+                        Full Time · Chennai
+                      </span>
+                    </div>
+                  </div>
+                </div>
 
-    <div className="item-description">
-      <p>
-        Working as a Graduate Trainee in the TCS Ignite Program, gaining hands-on
-        exposure to enterprise software development, Java-based applications,
-        and modern web technologies.
-      </p>
-    </div>
-  </div>
-</div>
+                <div className="item-description">
+                  <p>
+                    Working as a Graduate Trainee in the TCS Ignite Program, gaining hands-on
+                    exposure to enterprise software development, Java-based applications,
+                    and modern web technologies.
+                  </p>
+                </div>
+              </div>
+            </div>
 
 
             {/* Wipro Experience */}
@@ -103,7 +103,7 @@ function getExperienceDuration(startDate) {
                   <div className="logo-container">
                     <div className="company-logo wipro-logo">
                       <span className="logo-letter">W</span>
-                      
+
                       <div className="logo-border"></div>
                     </div>
                   </div>
@@ -113,18 +113,18 @@ function getExperienceDuration(startDate) {
                     <div className="meta-info">
                       <span className="meta-item">
                         <svg className="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                          <line x1="16" y1="2" x2="16" y2="6"/>
-                          <line x1="8" y1="2" x2="8" y2="6"/>
-                          <line x1="3" y1="10" x2="21" y2="10"/>
+                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                          <line x1="16" y1="2" x2="16" y2="6" />
+                          <line x1="8" y1="2" x2="8" y2="6" />
+                          <line x1="3" y1="10" x2="21" y2="10" />
                         </svg>
                         Aug 2025 - Sep 2025
                       </span>
                       <span className="meta-divider">•</span>
                       <span className="meta-item">
                         <svg className="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                          <circle cx="12" cy="12" r="10"/>
-                          <polyline points="12 6 12 12 16 14"/>
+                          <circle cx="12" cy="12" r="10" />
+                          <polyline points="12 6 12 12 16 14" />
                         </svg>
                         2 months
                       </span>
@@ -156,18 +156,18 @@ function getExperienceDuration(startDate) {
                     <div className="meta-info">
                       <span className="meta-item">
                         <svg className="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                          <line x1="16" y1="2" x2="16" y2="6"/>
-                          <line x1="8" y1="2" x2="8" y2="6"/>
-                          <line x1="3" y1="10" x2="21" y2="10"/>
+                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                          <line x1="16" y1="2" x2="16" y2="6" />
+                          <line x1="8" y1="2" x2="8" y2="6" />
+                          <line x1="3" y1="10" x2="21" y2="10" />
                         </svg>
                         July 2025
                       </span>
                       <span className="meta-divider">•</span>
                       <span className="meta-item">
                         <svg className="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                          <circle cx="12" cy="12" r="10"/>
-                          <polyline points="12 6 12 12 16 14"/>
+                          <circle cx="12" cy="12" r="10" />
+                          <polyline points="12 6 12 12 16 14" />
                         </svg>
                         10 days
                       </span>
