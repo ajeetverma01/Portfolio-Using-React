@@ -72,7 +72,7 @@ const Experience = () => {
                           <circle cx="12" cy="12" r="10" />
                           <polyline points="12 6 12 12 16 14" />
                         </svg>
-                        {getExperienceDuration("2026-01-21")}
+                        2 month
                       </span>
 
                       <span className="meta-divider">•</span>
