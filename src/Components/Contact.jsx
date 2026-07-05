@@ -5,10 +5,10 @@ const Contact = () => {
   const socials = [
     { name: "LinkedIn", icon: "bi-linkedin", url: "https://www.linkedin.com/in/ajeetverma01", color: "#0a66c2" },
     { name: "GitHub", icon: "bi-github", url: "https://github.com/ajeetverma01", color: "#24292e" },
-    { name: "Instagram", icon: "bi-instagram", url: "https://instagram.com/ajee.t__", color: "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)" },
+    { name: "Instagram", icon: "bi-instagram", url: "https://instagram.com/ajeetverma01", color: "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)" },
     { name: "LeetCode", icon: "bi-code-slash", url: "https://leetcode.com/u/ajeet_verma01", color: "#f89f1b" },
     { name: "HackerRank", icon: "bi-terminal", url: "https://www.hackerrank.com/ajeetverma01", color: "#1ba94c" },
-    { name: "Threads", icon: "bi-at", url: "https://www.threads.net/@ajee.t__", color: "#000" },
+    { name: "Threads", icon: "bi-at", url: "https://www.threads.net/@ajeetverma01", color: "#000" },
   ];
 
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
