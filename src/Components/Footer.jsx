@@ -32,7 +32,7 @@ const Footer = () => {
           <a href="https://linkedin.com/in/ajeetverma01" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin"></i>
           </a>
-          <a href="https://instagram.com/ajee.t__" target="_blank" rel="noopener noreferrer">
+          <a href="https://instagram.com/ajeetverma01" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-instagram"></i>
           </a>
         </div>

@@ -72,13 +72,13 @@ const Experience = () => {
                           <circle cx="12" cy="12" r="10" />
                           <polyline points="12 6 12 12 16 14" />
                         </svg>
-                        5 month
+                        8 month
                       </span>
 
                       <span className="meta-divider">•</span>
 
                       <span className="meta-item employment-badge">
-                        Full Time · Chennai
+                        Full Time · Greater Noida
                       </span>
                     </div>
                   </div>
