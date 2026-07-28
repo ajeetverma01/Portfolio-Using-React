@@ -136,7 +136,7 @@ const projectsData = [
   }
 ];
 
-const categories = ["React", "Java", "Node/Express", "PHP", "Spring Boot"];
+const categories = ["React", "Java", "Node/Express", "PHP"];
 
 const Projects = () => {
   const [filter, setFilter] = useState("All");
