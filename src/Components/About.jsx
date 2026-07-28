@@ -8,7 +8,7 @@ import {
   FaCloudUploadAlt,
   FaRocket,
 } from "react-icons/fa";
-import myPhoto from "../assets/myPhoto.jpg";
+import myPhoto from "../assets/a.jpeg";
 import "./CSS/about.css";
 
 const About = () => {

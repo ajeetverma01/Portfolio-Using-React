@@ -12,6 +12,16 @@ const projectsData = [
     icon: "💰"
   },
   {
+    id: 13,
+    title: "Authentication System",
+    description: "A secure full-stack authentication system with JWT access & refresh tokens, password hashing, and protected routes.",
+    tech: ["React", "Java", "Spring Boot", "JWT", "BCrypt", "MySQL"],
+    github: "https://github.com/ajeetverma01/JWT-Authentication-System.git",
+    live: null,
+    isLive: false,
+    icon: "🔐"
+  },
+  {
     id: 2,
     title: "Smart Shop Manager",
     description: "A PHP & MySQL web app to manage inventory, customers, and sales.",
@@ -31,7 +41,8 @@ const projectsData = [
     isLive: true,
     icon: "💼"
   },
-   {
+  
+  {
     id: 7,
     title: "NoteHub using Hibernate",
     description: "A Hibernate-powered note management web app using JSP, Servlets, and SQL.",
@@ -125,7 +136,7 @@ const projectsData = [
   }
 ];
 
-const categories = ["React", "Java", "Node/Express", "PHP"];
+const categories = ["React", "Java", "Node/Express", "PHP", "Spring Boot"];
 
 const Projects = () => {
   const [filter, setFilter] = useState("All");
