@@ -2,6 +2,16 @@ import React, { useState } from "react";
 
 const projectsData = [
   {
+  id: 14,
+  title: "LogSentinel AI",
+  description: "An AI-powered application log analyzer that detects errors, identifies root causes, and provides practical troubleshooting recommendations.",
+  tech: ["React", "Java", "Spring Boot", "Spring AI", "Google Gemini", "Axios"],
+  github: "YOUR_GITHUB_REPO_URL",
+  live: null,
+  isLive: false,
+  icon: "🛡️"
+},
+  {
     id: 1,
     title: "Expense & Income Tracker",
     description: "A web app to track your income & expenses with data visualization.",
