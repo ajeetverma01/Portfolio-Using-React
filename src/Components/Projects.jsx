@@ -6,7 +6,7 @@ const projectsData = [
   title: "LogSentinel AI",
   description: "An AI-powered application log analyzer that detects errors, identifies root causes, and provides practical troubleshooting recommendations.",
   tech: ["React", "Java", "Spring Boot", "Spring AI", "Google Gemini", "Axios"],
-  github: "YOUR_GITHUB_REPO_URL",
+  github: "https://github.com/ajeetverma01/LogSentinel-AI.git",
   live: null,
   isLive: false,
   icon: "🛡️"
