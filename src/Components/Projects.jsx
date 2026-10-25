@@ -2,6 +2,26 @@ import React, { useState } from "react";
 
 const projectsData = [
   {
+  id: 15,
+  title: "Sniply",
+  description: "A text and code sharing platform built with Java and Spring Boot, featuring shareable links, paste expiration, and automatic cleanup.",
+  tech: ["React", "Java", "Spring Boot", "Spring Data JPA", "PostgreSQL", "Docker", "Axios"],
+  github: "https://github.com/ajeetverma01/Sniply-Text-sharing-platform",
+  live: "https://sniply-beta.vercel.app/",
+  isLive: true,
+  icon: "📝"
+},
+{
+  id: 16,
+  title: "AIHire",
+  description: "An AI-powered recruitment platform that analyzes resumes, matches candidates with job descriptions, and streamlines job applications using Google Gemini.",
+  tech: ["React", "Java", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "Google Gemini"],
+  github: "https://github.com/ajeetverma01/AIHire-Enterprise-AI-Recruitment-Platform",
+  live: "",
+  isLive: false,
+  icon: "🤖"
+},
+  {
   id: 14,
   title: "LogSentinel AI",
   description: "An AI-powered application log analyzer that detects errors, identifies root causes, and provides practical troubleshooting recommendations.",
