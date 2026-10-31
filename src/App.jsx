@@ -13,7 +13,7 @@ import ScrollToTop from "./Components/scrollToTop";
 import Certificate from "./Components/Certificate";
 import Resume from "./Components/Resume";
 import Experience from "./Components/Experience";
-import Education from "./components/Education";
+import Education from "./Components/Education";
 
 
 function SEOex() {
