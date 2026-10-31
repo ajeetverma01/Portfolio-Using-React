@@ -1,250 +1,439 @@
-/* Certificate Section Styling */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* =========================
+   SECTION
+========================= */
+
 .certificate-section {
-  background: radial-gradient(circle at top left, #0c1019, #141a28 60%, #0d1118);
-  color: #f5f6fa;
-  padding: 80px 0;
-  min-height: 100vh;
   position: relative;
-}
-
-/* Performance optimization */
-.certificate-section * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Section Title */
-.section-title {
-  font-size: 2.3rem;
+  padding: 105px 25px;
+  background: #0b1018;
   color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.certificate-section::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: 0;
+  left: -250px;
+  border-radius: 50%;
+  background: rgba(0, 224, 255, 0.06);
+  filter: blur(110px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.certificate-section::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  bottom: 0;
+  right: -220px;
+  border-radius: 50%;
+  background: rgba(0, 224, 255, 0.045);
+  filter: blur(110px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.certificate-container {
+  max-width: 1250px;
+  margin: 0 auto;
   position: relative;
+  z-index: 1;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.certificate-header {
   text-align: center;
-  margin-bottom: 50px;
-  font-weight: 700; 
-  display: block;      
-  width: 100%;       
+  max-width: 650px;
+  margin: 0 auto 45px;
 }
 
-.underline {
-  width: 120px;
-  height: 3px;
-  background: linear-gradient(90deg, #ff4c4c, #8a3eff);
-  border-radius: 2px;
-  margin: 10px auto 0;
-  transition: width 0.3s ease;
+.certificate-eyebrow {
+  display: inline-block;
+  color: #00e0ff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
 }
 
-.section-title:hover .underline {
-  width: 140px;
+.certificate-heading {
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin: 0 0 16px;
+  color: #ffffff;
 }
 
-/* Grid layout - Optimized for performance */
+.certificate-heading span {
+  color: #00e0ff;
+}
+
+.certificate-subtitle {
+  color: #929eae;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* =========================
+   CERTIFICATE COUNT
+========================= */
+
+.certificate-count {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: fit-content;
+  margin: 0 auto 40px;
+  padding: 12px 18px;
+  border: 1px solid rgba(0, 224, 255, 0.16);
+  border-radius: 10px;
+  background: rgba(0, 224, 255, 0.045);
+}
+
+.count-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00e0ff;
+  font-size: 1.15rem;
+  border-radius: 9px;
+  background: rgba(0, 224, 255, 0.1);
+}
+
+.certificate-count div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.certificate-count strong {
+  color: #eafaff;
+  font-size: 0.82rem;
+}
+
+.certificate-count span {
+  color: #8795a5;
+  font-size: 0.68rem;
+}
+
+/* =========================
+   GRID
+========================= */
+
 .certificates-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
-  justify-items: center;
-  padding: 0 40px;
-  max-width: 1400px;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
 }
 
-/* Certificate Card - GPU Accelerated */
+/* =========================
+   CARD
+========================= */
+
 .certificate-card {
-  background: #9a99e215;
-  border-radius: 16px;
-  box-shadow: 0 4px 14px rgb(75, 14, 87);
+  min-width: 0;
+  background: #121a25;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 13px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
-  max-width: 300px;
-  text-align: center;
-  /* Performance optimizations */
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .certificate-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 8px 22px rgba(255, 76, 76, 0.3);
+  transform: translateY(-6px);
+  border-color: rgba(0, 224, 255, 0.35);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
-/* Image Wrapper */
-.img-wrapper {
-  background: #233158;
-  padding: 6px;
-  border-radius: 12px;
-  overflow: hidden;
-}
+/* =========================
+   IMAGE PREVIEW
+========================= */
 
-.img-wrapper img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-  transition: transform 0.4s ease;
-  /* Optimize image rendering */
-  image-rendering: -webkit-optimize-contrast;
-}
-
-.certificate-card:hover .img-wrapper img {
-  transform: scale(1.05);
-}
-
-/* Certificate Body */
-.certificate-body {
-  padding: 15px 10px 20px;
-}
-
-.certificate-body h6 {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-top: 10px;
-  color: #ffffff;
-  line-height: 1.4;
-  min-height: 2.8em;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.certificate-body p {
-  color: #b7b9c3;
-  margin: 6px 0;
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-
-.certificate-body p strong {
-  color: #e0e2e8;
-  font-weight: 600;
-}
-
-.certificate-body span {
-  color: #888;
-  font-size: 0.8rem;
-  display: inline-block;
-  margin-bottom: 8px;
-}
-
-/* View Button */
-.view-btn {
-  display: inline-block;
-  background: linear-gradient(90deg, #ff4c4c, #8a3eff);
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  padding: 7px 18px;
-  font-size: 0.85rem;
-  margin-top: 12px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  cursor: pointer;
+.certificate-preview {
+  height: 205px;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  background: #182331;
   overflow: hidden;
 }
 
-.view-btn::before {
-  content: '';
+.certificate-preview::after {
+  content: "";
   position: absolute;
-  top: 0;
-  left: -100%;
+  inset: 0;
+  background: rgba(0, 224, 255, 0);
+  transition: background 0.3s ease;
+  pointer-events: none;
+}
+
+.certificate-card:hover .certificate-preview::after {
+  background: rgba(0, 224, 255, 0.055);
+}
+
+.certificate-preview img {
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  transition: left 0.5s ease;
+  display: block;
+  object-fit: contain;
+  border-radius: 5px;
+  transition: transform 0.4s ease;
 }
 
-.view-btn:hover {
-  background: linear-gradient(90deg, #8a3eff, #ff4c4c);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 76, 76, 0.4);
+.certificate-card:hover .certificate-preview img {
+  transform: scale(1.035);
 }
 
-.view-btn:hover::before {
-  left: 100%;
+.certificate-number {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 5px 9px;
+  color: #00e0ff;
+  background: rgba(11, 16, 24, 0.85);
+  border: 1px solid rgba(0, 224, 255, 0.2);
+  border-radius: 5px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.view-btn:active {
+.preview-link {
+  position: absolute;
+  right: 13px;
+  bottom: 13px;
+  z-index: 3;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #071219;
+  background: #00e0ff;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(7px);
+  transition: all 0.3s ease;
+}
+
+.certificate-card:hover .preview-link,
+.preview-link:focus-visible {
+  opacity: 1;
   transform: translateY(0);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .certificates-grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
-    padding: 0 20px;
-  }
+.preview-link:hover {
+  background: #ffffff;
+}
 
-  .img-wrapper img {
-    height: 150px;
-  }
+/* =========================
+   CARD CONTENT
+========================= */
 
-  .section-title {
-    font-size: 1.9rem;
-  }
+.certificate-info {
+  padding: 20px;
+}
 
+.certificate-issuer {
+  display: inline-block;
+  color: #00d5ef;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+
+.certificate-info h3 {
+  color: #edf3f9;
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.5;
+  min-height: 2.8em;
+  margin: 0 0 18px;
+}
+
+.certificate-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.certificate-meta > span {
+  color: #8997a7;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.certificate-view-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #00d5ef;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.certificate-view-link:hover {
+  color: #ffffff;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.certificate-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 65px;
+}
+
+.certificate-footer p {
+  color: #8290a0;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-align: center;
+}
+
+.certificate-footer span {
+  width: 40px;
+  height: 1px;
+  background: rgba(0, 224, 255, 0.4);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
   .certificate-section {
-    padding: 60px 0;
+    padding: 85px 22px;
+  }
+
+  .certificates-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .certificate-preview {
+    height: 190px;
   }
 }
 
-@media (max-width: 576px) {
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .certificate-section {
+    padding: 70px 16px;
+  }
+
+  .certificate-header {
+    margin-bottom: 35px;
+  }
+
+  .certificate-heading {
+    font-size: 2.1rem;
+  }
+
+  .certificate-subtitle {
+    font-size: 0.82rem;
+  }
+
+  .certificate-count {
+    margin-bottom: 30px;
+  }
+
   .certificates-grid {
     grid-template-columns: 1fr;
-    padding: 0 16px;
+    gap: 18px;
   }
 
-  .certificate-card {
-    max-width: 100%;
+  .certificate-preview {
+    height: 210px;
   }
 
-  .section-title {
-    font-size: 1.7rem;
+  .certificate-info {
+    padding: 18px;
   }
 
-  .certificate-section {
-    padding: 50px 0;
+  .certificate-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .preview-link {
+    opacity: 1;
+    transform: none;
+  }
+
+  .certificate-footer {
+    margin-top: 45px;
+    gap: 9px;
+  }
+
+  .certificate-footer p {
+    font-size: 0.68rem;
+  }
+
+  .certificate-footer span {
+    width: 22px;
   }
 }
 
-/* Accessibility */
-.view-btn:focus,
-.certificate-card:focus {
-  outline: 2px solid #ff4c4c;
-  outline-offset: 2px;
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.certificate-view-link:focus-visible,
+.preview-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
 }
 
-/* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
   .certificate-card,
-  .img-wrapper img,
-  .view-btn,
-  .view-btn::before,
-  .underline {
+  .certificate-preview img,
+  .preview-link,
+  .certificate-view-link {
     transition: none;
   }
-  
-  .certificate-card {
-    will-change: auto;
+
+  .certificate-card:hover,
+  .certificate-preview img {
+    transform: none;
   }
 }
-
-/* Scroll performance optimization */
-@supports (content-visibility: auto) {
-  .certificate-card {
-    content-visibility: auto;
-    contain-intrinsic-size: 300px 420px;
-  }
-}
-
-/* Loading optimization for lazy images */
-.img-wrapper img[loading="lazy"] {
-  background: #12151d;
-}
-

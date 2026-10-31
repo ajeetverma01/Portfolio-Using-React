@@ -13,6 +13,7 @@ import ScrollToTop from "./Components/scrollToTop";
 import Certificate from "./Components/Certificate";
 import Resume from "./Components/Resume";
 import Experience from "./Components/Experience";
+import Education from "./components/Education";
 
 
 function SEOex() {
@@ -44,6 +45,9 @@ function SEOex() {
       case "/experience":
         title = "Experience | Ajeet Verma";
         break;
+      case "/education":
+        title = "Education | Ajeet Verma";
+        break;
       default:
         title = "Ajeet Verma | Portfolio";
     }
@@ -62,9 +66,6 @@ function SEOex() {
   return null;
 }
 
-// ----------------------
-// Main App
-// ----------------------
 function App() {
   return (
     <HelmetProvider>
@@ -80,6 +81,7 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/certificate" element={<Certificate />} />
+          <Route path="/education" element={<Education />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/resume" element={<Resume />} />
         </Routes>

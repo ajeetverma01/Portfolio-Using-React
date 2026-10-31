@@ -1,289 +1,257 @@
-/* Resume Section Styles */
+/* Resume Section */
 .resume-section {
   min-height: 100vh;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
-  position: relative;
-  overflow: hidden;
+  padding: 110px 20px 80px;
+  background: #0b1018;
+  color: #e8edf5;
 }
 
-/* Container */
 .resume-container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
-  position: relative;
 }
 
 /* Header */
 .resume-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 38px;
+}
+
+.resume-eyebrow {
+  display: inline-block;
+  color: #00e0ff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
 }
 
 .resume-title {
-  font-size: 3rem;
-  font-weight: 600;
-  color: #e0e0e0;
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
+  color: #f1f5f9;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
-.resume-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, #4a90e2, #5dacd4);
-  border-radius: 2px;
+.resume-title span {
+  color: #00e0ff;
 }
 
 .resume-subtitle {
-  font-size: 1.1rem;
-  color: #b0b0b0;
-  font-weight: 300;
-  line-height: 1.6;
-  max-width: 500px;
+  max-width: 550px;
   margin: 0 auto;
-}
-
-/* Main Resume Card */
-.resume-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease;
-}
-
-.resume-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
 /* PDF Viewer */
 .resume-viewer {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #111a25;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 12px;
 }
 
 .viewer-header {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 1rem 1.5rem;
+  min-height: 48px;
+  padding: 0 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 15px;
+  background: #141e2a;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
 }
 
 .window-controls {
   display: flex;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 7px;
 }
 
 .control-dot {
-  width: 12px;
-  height: 12px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
 }
 
-.control-dot.red { background: #ff5f57; }
-.control-dot.yellow { background: #ffbd2e; }
-.control-dot.green { background: #28ca42; }
-
-.file-name {
-  color: #a0a0a0;
-  font-size: 0.9rem;
-  font-weight: 500;
+.control-dot.red {
+  background: #ff5f57;
 }
 
+.control-dot.yellow {
+  background: #ffbd2e;
+}
+
+.control-dot.green {
+  background: #28ca42;
+}
+
+.file-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #b8c4d3;
+  font-size: 0.8rem;
+}
+
+.file-name i {
+  color: #00e0ff;
+  font-size: 1rem;
+}
+
+.file-type {
+  color: #00e0ff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* PDF */
 .pdf-container {
-  position: relative;
-  height: 600px;
-  overflow: hidden;
+  height: 680px;
+  background: #fff;
 }
 
 .resume-pdf {
+  display: block;
   width: 100%;
   height: 100%;
   border: none;
-  background: white;
+  background: #fff;
 }
 
 /* Action Buttons */
 .resume-actions {
   display: flex;
-  gap: 1.5rem;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 25px;
 }
 
-.action-btn {
-  display: flex;
+.resume-btn {
+  display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.875rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
-  min-width: 180px;
   justify-content: center;
+  gap: 9px;
+  min-width: 175px;
+  padding: 12px 20px;
+  border-radius: 7px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease, transform 0.2s ease;
 }
 
 .view-btn {
-  background: rgba(255, 255, 255, 0.1);
-  color: #e0e0e0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.download-btn {
-  background: linear-gradient(135deg, #4a90e2 0%, #5dacd4 100%);
-  color: white;
-  border: 1px solid #4a90e2;
+  color: #dce7f2;
+  background: #141e2a;
+  border: 1px solid #344252;
 }
 
 .view-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
-}
-
-.download-btn:hover {
-  background: linear-gradient(135deg, #5dacd4 0%, #4a90e2 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
-}
-
-.btn-icon {
-  font-size: 1.1rem;
-}
-
-/* Info Cards */
-.info-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-
-.info-card {
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  transition: all 0.2s ease;
-}
-
-.info-card:hover {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 255, 255, 0.15);
+  color: #00e0ff;
+  border-color: #00e0ff;
   transform: translateY(-2px);
 }
 
-.info-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  opacity: 0.9;
+.download-btn {
+  color: #07131b;
+  background: #00e0ff;
+  border: 1px solid #00e0ff;
 }
 
-.info-card h4 {
-  color: #e0e0e0;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  font-size: 1.1rem;
+.download-btn:hover {
+  color: #07131b;
+  background: #5ceaff;
+  border-color: #5ceaff;
+  transform: translateY(-2px);
 }
 
-.info-card p {
-  color: #a0a0a0;
-  font-size: 0.9rem;
-  margin: 0;
-  line-height: 1.5;
+.resume-btn i {
+  font-size: 1rem;
 }
 
-/* Responsive Design */
+/* Note */
+.resume-note {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: #718096;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.resume-note i {
+  color: #00e0ff;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .resume-section {
-    padding: 3rem 1rem;
+    padding: 95px 16px 60px;
   }
-  
-  .resume-title {
-    font-size: 2.2rem;
+
+  .resume-header {
+    margin-bottom: 28px;
   }
-  
-  .resume-card {
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
+
   .pdf-container {
-    height: 400px;
-  }
-  
-  .resume-actions {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .action-btn {
-    width: 100%;
-    max-width: 280px;
-  }
-  
-  .info-cards {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    height: 550px;
   }
 }
 
 @media (max-width: 480px) {
-  .resume-title {
-    font-size: 1.8rem;
+  .resume-section {
+    padding: 85px 12px 45px;
   }
-  
+
   .resume-subtitle {
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
-  
-  .pdf-container {
-    height: 300px;
-  }
-  
+
   .viewer-header {
-    padding: 0.75rem 1rem;
+    padding: 0 12px;
+    min-height: 44px;
   }
-  
-  .action-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
+
+  .file-name {
+    font-size: 0.7rem;
+  }
+
+  .pdf-container {
+    height: 430px;
+  }
+
+  .resume-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .resume-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .resume-note {
+    font-size: 0.72rem;
+    line-height: 1.5;
   }
 }
 
-/* Reduced motion for accessibility */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .resume-card,
-  .action-btn,
-  .info-card {
+  .resume-btn {
     transition: none;
   }
-  
-  .resume-card:hover,
-  .action-btn:hover,
-  .info-card:hover {
+
+  .resume-btn:hover {
     transform: none;
   }
 }

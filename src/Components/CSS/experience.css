@@ -1,0 +1,511 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+/* ================================
+   EXPERIENCE SECTION
+================================ */
+
+.experience-section {
+  --exp-accent: #00e0ff;
+
+  min-height: 100vh;
+  padding: 110px 20px 80px;
+
+  background: #0b1018;
+  color: #e8edf5;
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+.experience-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ================================
+   HEADING
+================================ */
+
+.experience-heading {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.experience-eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  color: var(--exp-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.experience-heading h2 {
+  margin: 0 0 13px;
+
+  color: #f5f7fa;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+.experience-heading h2 span {
+  color: var(--exp-accent);
+}
+
+.experience-heading p {
+  max-width: 550px;
+  margin: 0 auto;
+
+  color: #8996a7;
+  font-size: 0.92rem;
+  line-height: 1.8;
+}
+
+/* ================================
+   TIMELINE
+================================ */
+
+.experience-timeline {
+  position: relative;
+}
+
+.experience-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 22px;
+
+  padding-bottom: 32px;
+}
+
+.timeline-indicator {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-dot {
+  position: relative;
+  z-index: 2;
+
+  width: 13px;
+  height: 13px;
+  margin-top: 28px;
+
+  background: #263443;
+  border: 3px solid #526274;
+  border-radius: 50%;
+}
+
+.timeline-connector {
+  position: absolute;
+  top: 42px;
+  bottom: -32px;
+
+  width: 1px;
+  background: rgba(130, 150, 170, 0.22);
+}
+
+/* Current timeline indicator */
+
+.current-experience .timeline-dot {
+  background: var(--exp-accent);
+  border-color: rgba(0, 224, 255, 0.35);
+  box-shadow: 0 0 0 5px rgba(0, 224, 255, 0.09);
+}
+
+.current-experience .timeline-connector {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 224, 255, 0.4),
+    rgba(130, 150, 170, 0.15)
+  );
+}
+
+/* ================================
+   EXPERIENCE CARD
+================================ */
+
+.experience-card {
+  min-width: 0;
+  padding: 26px 28px;
+
+  background: #111a25;
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 11px;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.experience-card:hover {
+  background: #131e2a;
+  border-color: rgba(0, 224, 255, 0.24);
+  transform: translateY(-3px);
+}
+
+.current-experience .experience-card {
+  border-color: rgba(0, 224, 255, 0.3);
+}
+
+/* ================================
+   CARD HEADER
+================================ */
+
+.experience-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.company-identity {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+}
+
+.company-mark {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #1b2a38;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9px;
+
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.mark-tcs {
+  color: #00a9e0;
+  background: rgba(0, 169, 224, 0.09);
+  border-color: rgba(0, 169, 224, 0.2);
+}
+
+.mark-w {
+  color: #a78bfa;
+  background: rgba(139, 92, 246, 0.09);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.mark-s {
+  color: #00d5c0;
+  background: rgba(0, 213, 192, 0.08);
+  border-color: rgba(0, 213, 192, 0.2);
+}
+
+.company-details {
+  min-width: 0;
+}
+
+.company-details h3 {
+  margin: 0 0 5px;
+
+  color: #f0f4f8;
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.company-details p {
+  margin: 0;
+
+  color: #8d9bad;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ================================
+   STATUS
+================================ */
+
+.experience-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 6px 10px;
+  border-radius: 5px;
+
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.status-current {
+  color: var(--exp-accent);
+  background: rgba(0, 224, 255, 0.07);
+  border: 1px solid rgba(0, 224, 255, 0.2);
+}
+
+.status-current .status-dot {
+  background: var(--exp-accent);
+}
+
+.status-completed {
+  color: #aab6c4;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.status-completed .status-dot {
+  background: #8292a5;
+}
+
+/* ================================
+   META INFORMATION
+================================ */
+
+.experience-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+
+  padding: 13px 0;
+  margin-bottom: 16px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.experience-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #8997a8;
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
+.experience-meta i {
+  color: #718497;
+  font-size: 0.85rem;
+}
+
+/* ================================
+   DESCRIPTION
+================================ */
+
+.experience-description p {
+  margin: 0;
+
+  color: #b0bdcb;
+  font-size: 0.85rem;
+  line-height: 1.85;
+}
+
+/* ================================
+   SKILL TAGS
+================================ */
+
+.experience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+.experience-tags span {
+  padding: 6px 10px;
+
+  color: #9eafbf;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 5px;
+
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* ================================
+   FOOTER NOTE
+================================ */
+
+.experience-footer-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  margin-top: 15px;
+}
+
+.experience-footer-note span {
+  width: 45px;
+  height: 1px;
+  background: rgba(0, 224, 255, 0.25);
+}
+
+.experience-footer-note p {
+  margin: 0;
+  color: #758496;
+  font-size: 0.76rem;
+  text-align: center;
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 768px) {
+  .experience-section {
+    padding: 95px 18px 65px;
+  }
+
+  .experience-heading {
+    margin-bottom: 45px;
+  }
+
+  .experience-entry {
+    grid-template-columns: 22px 1fr;
+    gap: 15px;
+  }
+
+  .experience-card {
+    padding: 22px;
+  }
+
+  .experience-card-header {
+    align-items: flex-start;
+  }
+
+  .company-details h3 {
+    font-size: 0.98rem;
+  }
+
+  .experience-meta {
+    gap: 11px 17px;
+  }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 520px) {
+  .experience-section {
+    padding: 85px 14px 55px;
+  }
+
+  .experience-heading {
+    margin-bottom: 38px;
+  }
+
+  .experience-heading p {
+    font-size: 0.84rem;
+  }
+
+  .experience-entry {
+    grid-template-columns: 15px 1fr;
+    gap: 10px;
+    padding-bottom: 24px;
+  }
+
+  .timeline-dot {
+    width: 11px;
+    height: 11px;
+    margin-top: 24px;
+  }
+
+  .timeline-connector {
+    top: 35px;
+    bottom: -24px;
+  }
+
+  .experience-card {
+    padding: 18px 15px;
+  }
+
+  .experience-card-header {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .company-identity {
+    gap: 11px;
+  }
+
+  .company-mark {
+    width: 42px;
+    height: 42px;
+    font-size: 0.9rem;
+  }
+
+  .company-details h3 {
+    font-size: 0.9rem;
+  }
+
+  .company-details p {
+    font-size: 0.78rem;
+  }
+
+  .experience-status {
+    margin-left: 53px;
+  }
+
+  .experience-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 8px;
+  }
+
+  .experience-meta span {
+    font-size: 0.69rem;
+  }
+
+  .experience-description p {
+    font-size: 0.8rem;
+  }
+
+  .experience-tags span {
+    font-size: 0.66rem;
+  }
+
+  .experience-footer-note {
+    gap: 9px;
+  }
+
+  .experience-footer-note span {
+    width: 20px;
+  }
+
+  .experience-footer-note p {
+    font-size: 0.68rem;
+  }
+}
+
+/* ================================
+   ACCESSIBILITY
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-section *,
+  .experience-section *::before,
+  .experience-section *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

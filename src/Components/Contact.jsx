@@ -1,149 +1,342 @@
+
 import React, { useState } from "react";
 import "./CSS/contact.css";
 
 const Contact = () => {
   const socials = [
-    { name: "LinkedIn", icon: "bi-linkedin", url: "https://www.linkedin.com/in/ajeetverma01", color: "#0a66c2" },
-    { name: "GitHub", icon: "bi-github", url: "https://github.com/ajeetverma01", color: "#24292e" },
-    { name: "Instagram", icon: "bi-instagram", url: "https://instagram.com/ajeetverma01", color: "linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)" },
-    { name: "LeetCode", icon: "bi-code-slash", url: "https://leetcode.com/u/ajeet_verma01", color: "#f89f1b" },
-    { name: "HackerRank", icon: "bi-terminal", url: "https://www.hackerrank.com/ajeetverma01", color: "#1ba94c" },
-    { name: "Threads", icon: "bi-at", url: "https://www.threads.net/@ajeetverma01", color: "#000" },
+    {
+      name: "LinkedIn",
+      icon: "bi-linkedin",
+      url: "https://www.linkedin.com/in/ajeetverma01",
+    },
+    {
+      name: "GitHub",
+      icon: "bi-github",
+      url: "https://github.com/ajeetverma01",
+    },
+    {
+      name: "Instagram",
+      icon: "bi-instagram",
+      url: "https://instagram.com/ajeetverma01",
+    },
+    {
+      name: "LeetCode",
+      icon: "bi-code-slash",
+      url: "https://leetcode.com/u/ajeet_verma01",
+    },
+    {
+      name: "HackerRank",
+      icon: "bi-terminal",
+      url: "https://www.hackerrank.com/ajeetverma01",
+    },
+    {
+      name: "Threads",
+      icon: "bi-at",
+      url: "https://www.threads.net/@ajeetverma01",
+    },
   ];
 
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [modalMessage, setModalMessage] = useState(""); // Message text
-  const [modalType, setModalType] = useState(""); // "success" or "error"
-  const [showModal, setShowModal] = useState(false); // modal visibility
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [modal, setModal] = useState({
+    visible: false,
+    type: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    setFormData((previous) => ({
+      ...previous,
+      [name]: value,
+    }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({ "form-name": "contact", ...formData }).toString(),
-    })
-      .then(() => {
-        setModalMessage("Thanks! Your message has been sent.");
-        setModalType("success");
-        setShowModal(true);
-        setFormData({ name: "", email: "", message: "" });
-      })
-      .catch(() => {
-        setModalMessage("Oops! Something went wrong. Please try again.");
-        setModalType("error");
-        setShowModal(true);
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          "form-name": "contact",
+          ...formData,
+        }).toString(),
       });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      setModal({
+        visible: true,
+        type: "success",
+        message: "Thanks for reaching out! I'll get back to you soon.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      setModal({
+        visible: true,
+        type: "error",
+        message: "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const closeModal = () => {
-    setShowModal(false);
+    setModal({
+      visible: false,
+      type: "",
+      message: "",
+    });
   };
 
   return (
-    <section className="contact-container py-5">
-      <div className="text-center mb-5 animate-fadeIn">
-        <h2 className="contact-title">Let’s Team Up!</h2>
-        <p className="contact-subtitle">Got something cool in mind? Let’s code it into existence.</p>
-      </div>
+    <section className="contact-section" id="contact">
+      <div className="contact-wrapper">
 
-      <div className="container contact-content">
-        {/* Left Side: Contact Info */}
-        <div className="contact-card animate-float shadow-lg p-4 text-center">
-          <h4 className="fw-bold mb-3">Reach Out Anytime</h4>
+        {/* Section Heading */}
+        <div className="contact-heading">
+          <span className="contact-eyebrow">
+            <span className="status-dot"></span>
+            GET IN TOUCH
+          </span>
+
+          <h2>
+            Let's start a <span>conversation.</span>
+          </h2>
+
           <p>
-            <i className="bi bi-envelope-fill me-2 text-info"></i>
-            <a href="mailto:i.ajeetverma01@gmail.com" className="contact-link">i.ajeetverma01@gmail.com</a>
+            Have a project idea, collaboration opportunity, or just want
+            to connect? Feel free to send me a message.
           </p>
-          <p>
-            <i className="bi bi-phone-fill me-2 text-success"></i> +91 6389695460
-          </p>
-          <div className="social-links d-flex flex-wrap justify-content-center gap-3 mt-4">
-            {socials.map((social, index) => (
+        </div>
+
+        {/* Main Contact Layout */}
+        <div className="contact-grid">
+
+          {/* Contact Information */}
+          <aside className="contact-info">
+            <div>
+              <span className="contact-label">CONTACT INFORMATION</span>
+
+              <h3>
+                Let's connect and build something meaningful.
+              </h3>
+
+              <p className="contact-description">
+                I'm interested in software development, Java Full Stack
+                opportunities, and learning through real-world projects.
+              </p>
+            </div>
+
+            <div className="contact-details">
               <a
-                key={index}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-btn"
-                style={{ background: social.color.startsWith("linear") ? social.color : social.color }}
-                title={social.name}
+                href="mailto:i.ajeetverma01@gmail.com"
+                className="contact-detail"
               >
-                <i className={`bi ${social.icon}`}></i>
+                <span className="detail-icon">
+                  <i className="bi bi-envelope"></i>
+                </span>
+
+                <span>
+                  <small>Email me</small>
+                  <strong>i.ajeetverma01@gmail.com</strong>
+                </span>
+
+                <i className="bi bi-arrow-up-right detail-arrow"></i>
               </a>
-            ))}
+
+              <a
+                href="tel:+916389695460"
+                className="contact-detail"
+              >
+                <span className="detail-icon">
+                  <i className="bi bi-telephone"></i>
+                </span>
+
+                <span>
+                  <small>Call me</small>
+                  <strong>+91 6389695460</strong>
+                </span>
+
+                <i className="bi bi-arrow-up-right detail-arrow"></i>
+              </a>
+            </div>
+
+            <div className="social-section">
+              <span className="contact-label">FIND ME ONLINE</span>
+
+              <div className="social-grid">
+                {socials.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link"
+                    aria-label={social.name}
+                    title={social.name}
+                  >
+                    <i className={`bi ${social.icon}`}></i>
+                    <span>{social.name}</span>
+                    <i className="bi bi-arrow-up-right social-arrow"></i>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="contact-availability">
+              <span className="availability-dot"></span>
+              Open to meaningful connections
+            </div>
+          </aside>
+
+          {/* Contact Form */}
+          <div className="contact-form-card">
+            <div className="form-heading">
+              <span className="contact-label">SEND A MESSAGE</span>
+              <h3>Tell me what's on your mind.</h3>
+              <p>I'll try to get back to you as soon as possible.</p>
+            </div>
+
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
+            >
+              <input
+                type="hidden"
+                name="form-name"
+                value="contact"
+              />
+
+              <div className="honeypot-field" aria-hidden="true">
+                <label>
+                  Don't fill this out:
+                  <input name="bot-field" tabIndex="-1" />
+                </label>
+              </div>
+
+              <div className="form-row">
+                <label htmlFor="contact-name">Your Name</label>
+                <input
+                  id="contact-name"
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  autoComplete="name"
+                  required
+                  maxLength={100}
+                />
+              </div>
+
+              <div className="form-row">
+                <label htmlFor="contact-email">Email Address</label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  autoComplete="email"
+                  required
+                  maxLength={254}
+                />
+              </div>
+
+              <div className="form-row">
+                <label htmlFor="contact-message">Your Message</label>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  placeholder="Tell me a little about your idea..."
+                  rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  maxLength={5000}
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="contact-submit"
+                disabled={isSubmitting}
+              >
+                <span>
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </span>
+
+                <i className="bi bi-arrow-up-right"></i>
+              </button>
+
+              <p className="form-note">
+                <i className="bi bi-shield-check"></i>
+                Your information will only be used to respond to your message.
+              </p>
+            </form>
           </div>
         </div>
-
-        {/* Right Side: Contact Form */}
-        <div className="form-card shadow-lg p-4 animate-float">
-          <h4 className="fw-bold mb-3 text-center">Send Your Thoughts</h4>
-
-          <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            onSubmit={handleSubmit}
-          >
-            <input type="hidden" name="form-name" value="contact" />
-            <p style={{ display: "none" }}>
-              <label>Don’t fill this out: <input name="bot-field" /></label>
-            </p>
-
-            <div className="mb-3">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-                className="form-control custom-input"
-                value={formData.name}
-                onChange={handleChange}
-                autoComplete="off"    
-              />
-            </div>
-            <div className="mb-3">
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-                className="form-control custom-input"
-                value={formData.email}
-                onChange={handleChange}
-                autoComplete="off"  
-              />
-            </div>
-            <div className="mb-3">
-              <textarea
-                name="message"
-                placeholder="Your Message"
-                required
-                className="form-control custom-input"
-                rows="4"
-                value={formData.message}
-                onChange={handleChange}
-                autoComplete="off"  
-              ></textarea>
-            </div>
-
-            <button type="submit" className="btn btn-send w-100">Send Message</button>
-          </form>
-        </div>
       </div>
 
-      {/* Modal Alert */}
-      {showModal && (
-        <div className="modal-overlay">
-          <div className={`modal-box ${modalType}`}>
-            <p>{modalMessage}</p>
-            <button className="modal-ok-btn" onClick={closeModal}>OK</button>
+      {/* Feedback Modal */}
+      {modal.visible && (
+        <div
+          className="contact-modal-overlay"
+          onClick={closeModal}
+        >
+          <div
+            className={`contact-modal ${modal.type}`}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="contact-modal-message"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="modal-icon">
+              <i
+                className={
+                  modal.type === "success"
+                    ? "bi bi-check-lg"
+                    : "bi bi-exclamation-lg"
+                }
+              ></i>
+            </div>
+
+            <h3>
+              {modal.type === "success" ? "Message Sent!" : "Submission Failed"}
+            </h3>
+
+            <p id="contact-modal-message">{modal.message}</p>
+
+            <button onClick={closeModal}>
+              Got it
+            </button>
           </div>
         </div>
       )}

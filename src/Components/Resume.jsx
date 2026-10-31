@@ -1,106 +1,79 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./CSS/resume.css";
 
+const RESUME_URL = "/certificates/Ajeet_Verma_Resume.pdf";
+
 const Resume = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
-    <section className={`resume-section ${isVisible ? 'visible' : ''}`} id="resume">
+    <section className="resume-section" id="resume">
       <div className="resume-container">
-        {/* Animated Background Elements */}
-        <div className="background-elements">
-          <div className="glow-circle circle-1"></div>
-          <div className="glow-circle circle-2"></div>
-          <div className="glow-circle circle-3"></div>
+
+        <div className="resume-header">
+          <span className="resume-eyebrow">MY PROFILE</span>
+
+          <h1 className="resume-title">
+            My <span>Resume</span>
+          </h1>
+
+          <p className="resume-subtitle">
+            Explore my professional background, technical skills,
+            education, and experience.
+          </p>
         </div>
 
-        <div className="resume-content">
-          {/* Header with animated title */}
-          <div className="resume-header">
-            <h2 className="resume-title">
-              <span className="title-text">My Resume</span>
-              <span className="title-glow"></span>
-            </h2>
-            <p className="resume-subtitle">
-              You can view or download my latest resume below
-            </p>
-          </div>
+        <div className="resume-viewer">
 
-          {/* Main Resume Card with Glassmorphism */}
-          <div className="resume-card">
-            <div className="card-glow"></div>
-            
-            {/* PDF Viewer */}
-            <div className="resume-viewer">
-              <div className="viewer-header">
-                <div className="window-controls">
-                  <span className="control-dot red"></span>
-                  <span className="control-dot yellow"></span>
-                  <span className="control-dot green"></span>
-                </div>
-                <span className="file-name">Ajeet_Verma_Resume.pdf</span>
-              </div>
-              
-              <div className="pdf-container">
-                <iframe
-                  src="/certificates/Ajeet_Verma_Resume.pdf"
-                  title="Ajeet Verma Resume"
-                  className="resume-pdf"
-                />
-                <div className="pdf-overlay"></div>
-              </div>
+          <div className="viewer-header">
+            <div className="window-controls">
+              <span className="control-dot red"></span>
+              <span className="control-dot yellow"></span>
+              <span className="control-dot green"></span>
             </div>
 
-            {/* Action Buttons */}
-            <div className="resume-actions">
-              <a
-                href="/certificates/Ajeet_Verma_Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="action-btn view-btn"
-              >
-                <span className="btn-icon">👁️</span>
-                View Fullscreen
-                <span className="btn-glow"></span>
-              </a>
-              
-              <a
-                href="/certificates/Ajeet_Verma_Resume.pdf"
-                download="Ajeet_Verma_Resume.pdf"
-                className="action-btn download-btn"
-              >
-                <span className="btn-icon">📥</span>
-                Download Resume
-                <span className="btn-glow"></span>
-              </a>
-            </div>
+            <span className="file-name">
+              <i className="bi bi-file-earmark-pdf"></i>
+              Ajeet_Verma_Resume.pdf
+            </span>
+
+            <span className="file-type">PDF</span>
           </div>
 
-          {/* Additional Info Cards */}
-          <div className="info-cards">
-            <div className="info-card">
-              <div className="info-icon">💼</div>
-              <h4>Professional</h4>
-              <p>Updated regularly</p>
-            </div>
-            
-            <div className="info-card">
-              <div className="info-icon">📄</div>
-              <h4>PDF Format</h4>
-              <p>Easy to view & print</p>
-            </div>
-            
-            <div className="info-card">
-              <div className="info-icon">🔄</div>
-              <h4>Latest Version</h4>
-              <p>Current as of 2025</p>
-            </div>
+          <div className="pdf-container">
+            <iframe
+              src={RESUME_URL}
+              title="Ajeet Verma Resume"
+              className="resume-pdf"
+            />
           </div>
+
         </div>
+
+        <div className="resume-actions">
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-btn view-btn"
+          >
+            <i className="bi bi-eye"></i>
+            View Fullscreen
+          </a>
+
+          <a
+            href={RESUME_URL}
+            download="Ajeet_Verma_Resume.pdf"
+            className="resume-btn download-btn"
+          >
+            <i className="bi bi-download"></i>
+            Download Resume
+          </a>
+        </div>
+
+        <p className="resume-note">
+          <i className="bi bi-info-circle"></i>
+          For the best viewing experience, you can open the PDF in a new tab.
+        </p>
+
       </div>
     </section>
   );
